@@ -9,4 +9,5 @@ description = ""
 showFullContent = false
 readingTime = true
 hideComments = false
+ToC = false
 +++
