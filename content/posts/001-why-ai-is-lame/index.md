@@ -28,6 +28,6 @@ Now consider Eliud driving a car at an average pace of one minute per mile for 2
 
 Perhaps why I found this morning's email so lame is not because of the person or the poem, but rather, because _that_ person didn't write _that_ poem.
 
-Perhaps it's my fault for setting my expectations too high.
+Perhaps it's my fault for missing unaugmented human communication.
 
 Perhaps I think AI is just lame.
