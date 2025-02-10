@@ -14,7 +14,7 @@ AI is impressive and lame at the same time.
 
 For anyone who has tried to program a computer, it's obvious why AI is impressive. For anyone who hasn't, I can see how it looks like magic. And for anyone who appreciates art, you may not understand why you feel a sense of loathing when looking at AI-generated works.
 
-In an attempt to be fun, a colleague of mine sent out an email this morning. The email contained a poem that was clearly written by AI. I read the poem and actually enjoyed it. I thought it was quite clever. But even more so, I thought it was so lame.
+A colleague of mine sent out an email this morning. In an attempt to be fun, the email contained a poem, but it was clearly written using AI. I read the poem and actually enjoyed it. I thought it was quite clever. But even more so, I thought it was so lame.
 
 What was so lame about it?
 
@@ -26,7 +26,7 @@ Consider the marathon runner, Eliud Kipchoge. He runs a marathon at an average p
 
 Now consider Eliud driving a car at an average pace of one minute per mile for 26.1 miles. Go to your car and see if you can do that and ask yourself whether you are impressed with yourself or not. Personally, I do this all the time without breaking a sweat.
 
-Perhaps why I found this morning's email so lame is not because of the person or the email itself, but rather, because _that_ person didn't write _that_ email.
+Perhaps why I found this morning's email so lame is not because of the person or the poem, but rather, because _that_ person didn't write _that_ poem.
 
 Perhaps it's my fault for setting my expectations too high.
 
