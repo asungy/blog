@@ -2,7 +2,7 @@
 title = "Why AI is lame"
 date = "2025-02-10T08:15:55-05:00"
 author = "Alek Sung"
-tags = ["short", "ai", "opinion"]
+tags = ["ai", "opinion", "short"]
 description = "I don't see what all the fuss is about."
 showFullContent = false
 readingTime = true
