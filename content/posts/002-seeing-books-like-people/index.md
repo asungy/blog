@@ -21,10 +21,10 @@ Sometimes I think back on my youth and wonder if that boy would be mournful of t
 
 When I walk into a bookstore, the innocent and curious questions that I used to once ask no longer seem to bubble from within me. Rather, it's as if I almost know the contents of the book before reading it; that based on the back cover that this book will be too simplistic for my liking, or that the table of contents suggest it wouldn't be useful enough to me, or that the writing style indicates a certain level of complexity that I don't have the energy for. For some reason, when it comes to reading, I become judgemental and dismissive. One would suspect that I had a traumatic, physical altercation with a book in my past.
 
-But today I considered for a moment as if these books were people and it contents were potential conversations. Rather than a bookstore with bookshelves, I imagined walking into a coffee shop with various people sitting silently by themselves and before them was an empty seat. The way I approached books would be like taking a seat in front of these people expecting to learn something from them without first even engaging in an introduction of any sort. I was coming up to the table like an entitled asshole, demanding their utility to me only to treat their time like plasticware.
+But today I considered for a moment as if these books were people and its contents were potential conversations. Rather than a bookstore with bookshelves, I imagined walking into a coffee shop with various people sitting silently by themselves and before them was an empty seat. The way I approached books would be like taking a seat in front of these people expecting to learn something from them without first even engaging in an introduction of any sort. I was coming up to the table like an entitled asshole, demanding their utility to me only to treat their time like plasticware.
 
 Then I had another thought. I imagined walking into another coffee shop but instead of people sitting quietly alone, they were eagerly rushing up all at once to tell or sell me something, unsolicitedly. I'd probably try to run out of that coffee shop as fast I could. But ironcally, my phone does the same thing and yet I entertain oncoming assault.
 
-I seem to have conditioned myself to only consume the monologues that present themselve before me.
+I seem to have conditioned myself to only consume the monologues that present themselves before me.
 
-Perhaps the reason books appear silent to me is because I'm the one who has failed to show up and engage in a dialogue.
+Perhaps the reason books appear silent to me is because I'm the one who has failed to show up and engage in dialogue.
