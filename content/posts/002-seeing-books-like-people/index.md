@@ -17,7 +17,7 @@ My stack of books was never too short nor too tall. I would always try to work m
 
 It is now 2025 and the last book I read was three years ago.
 
-Sometimes I think back on my youth and wonder if that boy would be mournful of the person I became. Granted, with a full-time job and a family, I certainly have less free time now than I did 17 years ago. I think the young boy could be understanding of this. But I think his forgiveness end at the _way_ I approach reading now.
+Sometimes I think back on my youth and wonder if that boy would be mournful of the person I have become. Granted, with a full-time job and a family, I certainly have less free time now than I did 17 years ago. I think the young boy could be understanding of this. But I think his forgiveness would end at the _way_ I approach reading now.
 
 When I walk into a bookstore, the innocent and curious questions that I used to once ask no longer seem to bubble from within me. Rather, it's as if I almost know the contents of the book before reading it; that based on the back cover that this book will be too simplistic for my liking, or that the table of contents suggest it wouldn't be useful enough to me, or that the writing style indicates a certain level of complexity that I don't have the energy for. For some reason, when it comes to reading, I become judgemental and dismissive. One would suspect that I had a traumatic, physical altercation with a book in my past.
 
