@@ -25,4 +25,4 @@ But today I considered for a moment as if these books were people and its conten
 
 Then I had another thought. I imagined walking into another coffee shop but instead of people sitting quietly alone, they were eagerly rushing up all at once to tell or sell me something, unsolicitedly. I'd probably run out of a coffee shop like that as fast I could. But ironcally, my phone does the same thing and yet I entertain oncoming assault.
 
-Somewhere from youth to adulthood, I seem to have conditioned myself to expect too much of books and too little of myself. Perhaps the reason books appear silent to me is because I'm the one who has failed to show up an open mind and engage in a dance of dialogue.
+Somewhere from youth to adulthood, I seem to have conditioned myself to expect too much of books and too little of myself. Perhaps the reason books appear silent to me is because I'm the one who has failed to show up with an open mind and engage in a dance of dialogue.
