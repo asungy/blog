@@ -13,7 +13,7 @@ ToC = false
 
 I remember when I was in middle school I had a stack of books on the side of my desk. It had all sorts of books with no sense of cohesion. The only common thread was that they were able to capture my interest in someway. Every time I sat down to read, I would take the first book from the stack, and when I was done reading, I'd place it back on top. Whenever I finished a book, I would return it to my bookshelf and start on the next one on the stack.
 
-My stack of books was never too short nor too tall. I would always try to work my way from the top and also occasionally supply new books at the bottom. It was a beautifully simple and dynamic system and I found great satisfaction in attending to it, almost like a person caring for their garden.
+My stack of books was never too short nor too tall. I would always work my way from the top and also occasionally supply new books at the bottom. It was a beautifully simple and dynamic system and I found great satisfaction in attending to it, almost like a person caring for their garden.
 
 It is now 2025 and the last book I read was three years ago.
 
