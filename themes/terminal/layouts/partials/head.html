@@ -77,3 +77,8 @@
 
 <!-- Extended head section-->
 {{ partial "extended_head.html" . }}
+
+<!-- Enable math typesetting -->
+{{ if .Param "math" }}
+  {{ partialCached "math.html" . }}
+{{ end }}

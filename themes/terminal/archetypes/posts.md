@@ -11,4 +11,5 @@ showFullContent = false
 readingTime = true
 hideComments = false
 ToC = false
+math = false
 +++

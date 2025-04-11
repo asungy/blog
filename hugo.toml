@@ -49,6 +49,9 @@ pagination.pagerSize = 5
   # TocTitle = "Table of Contents" # default
   TocTitle = "Table of Contents"
 
+  # Math typesetting. Disabled by default.
+  math = false
+
   # Set date/time format for posts
   # This will impact the date/time displayed on
   # index.html, the posts list page, and on posts themselves
@@ -108,3 +111,10 @@ pagination.pagerSize = 5
     style = 'tokyonight-storm'
     tabWidth = 4
     wrapperClass = 'highlight'
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
