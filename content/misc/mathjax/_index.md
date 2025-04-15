@@ -1,6 +1,6 @@
 +++
 date = '2025-04-11T09:42:50-04:00'
-title = 'Mathjax Cheatsheet'
+title = 'Mathjax Reference'
 readingTime = false
 math = true
 +++

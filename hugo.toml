@@ -93,12 +93,12 @@ pagination.pagerSize = 5
       [languages.en.menu]
         [[languages.en.menu.main]]
           identifier = "about"
-          name = "About"
+          name = "about"
           url = "/about"
         [[languages.en.menu.main]]
-          identifier = "cheatsheets"
-          name = "Cheatsheets"
-          url = "/cheatsheets"
+          identifier = "misc"
+          name = "misc"
+          url = "/misc"
 
 [markup]
   [markup.highlight]
