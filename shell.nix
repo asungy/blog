@@ -4,4 +4,8 @@
       hugo
       pagefind
     ];
-}
+
+    shellHook = ''
+      alias serve='pagefind --site public && hugo server --disableFastRender'
+    '';
+  }

@@ -11,5 +11,5 @@ nav.breadcrumb {
 }
 
 .breadcrumb li:not(:last-child)::after {
-  content: "»";
+  content: " » ";
 }
