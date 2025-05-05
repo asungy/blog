@@ -82,3 +82,18 @@
 {{ if .Param "math" }}
   {{ partialCached "math.html" . }}
 {{ end }}
+
+<!-- Enable search -->
+{{ if .Param "search" }}
+  {{ partialCached "search.html" . }}
+  <style>
+    :root {
+      --pagefind-ui-scale: 0.75;
+      --pagefind-ui-text: var(--foreground);
+      --pagefind-ui-background: var(--background);
+      --pagefind-ui-border: var(--accent);
+      --pagefind-ui-border-width: 2px;
+      --pagefind-ui-border-radius: 8px;
+    }
+  </style>
+{{ end }}

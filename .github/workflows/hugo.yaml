@@ -62,6 +62,8 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Add CNAME record
         run: echo 'www.aleksung.dev' > ./public/CNAME
+      - name: Add search indexing with PageFind
+        run:  npx -y pagefind --site public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

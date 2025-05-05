@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin: 20px 1px;
+  margin: 10px 1px;
 }
 
 .navigation-menu__inner {
@@ -16,7 +16,6 @@
 
 .navigation-menu__inner > li {
   flex: 0 0 auto;
-  margin-bottom: 10px;
   white-space: nowrap;
 }
 

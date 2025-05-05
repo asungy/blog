@@ -13,4 +13,11 @@
   {{ if len $.Site.Menus }}
     {{ partial "menu.html" . }}
   {{ end }}
+
+  {{ if .Param "search" }}
+    <div id="search"></div>
+  {{ end }}
+
+  {{ partial "breadcrumb" . }}
+
 </header>

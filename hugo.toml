@@ -12,7 +12,7 @@ pagination.pagerSize = 5
   contentTypeName = "posts"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 1
 
   # show selector to switch language
   showLanguageSelector = false
@@ -51,6 +51,9 @@ pagination.pagerSize = 5
 
   # Math typesetting. Disabled by default.
   math = false
+
+  # Search bar. Enabled by default.
+  search = true
 
   # Set date/time format for posts
   # This will impact the date/time displayed on
@@ -92,9 +95,10 @@ pagination.pagerSize = 5
 
       [languages.en.menu]
         [[languages.en.menu.main]]
-          identifier = "about"
-          name = "about"
-          url = "/about"
+          identifier = "notes"
+          name = "notes"
+          url = "/notes"
+          weight = 0
 
 [markup]
   [markup.highlight]

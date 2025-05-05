@@ -10,3 +10,17 @@
       </div>
   </div>
 </footer>
+
+{{ $menu := resources.Get "js/menu.js" | js.Build }}
+
+{{ $bundle := slice $menu | resources.Concat "bundle.js" | resources.Minify }}
+
+<script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
+
+{{ if .Param "search" }}
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#search", showSubResults: true });
+    });
+  </script>
+{{ end }}

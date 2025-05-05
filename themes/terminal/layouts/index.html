@@ -1,0 +1,6 @@
+{{ $about := .Site.GetPage "about" }}
+{{ if $about }}
+  {{ $about.Render "single" }}
+{{ else }}
+  <script>window.location = "/404"</script>
+{{ end }}

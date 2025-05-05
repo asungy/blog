@@ -1,0 +1,15 @@
+nav.breadcrumb {
+  margin: 10px 2em;
+}
+
+.breadcrumb ol {
+  margin: 0;
+}
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: "»";
+}
