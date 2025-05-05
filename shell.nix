@@ -6,6 +6,6 @@
     ];
 
     shellHook = ''
-      alias serve='pagefind --site public && hugo server --disableFastRender'
+      alias serve='hugo build && pagefind --site public && hugo server --disableFastRender'
     '';
   }

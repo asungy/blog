@@ -10,6 +10,7 @@ layout = 'single'
 - [Definitions](./mathematics/definitions)
 - [Exercises](./mathematics/exercises)
 - [Proofs](./mathematics/proofs)
+- [Theorems](./mathematics/theorems)
 
 # Cheatsheets
 - [MathJax](./cheatsheets/mathjax.md)

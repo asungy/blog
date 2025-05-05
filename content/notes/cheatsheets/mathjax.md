@@ -6,6 +6,8 @@ math = true
 ToC = true
 +++
 
+<!-- For formatting: http://markdowntable.com/ -->
+
 ## Arrows
 | Symbol                  | Code                  | Meaning                         |
 |-------------------------|-----------------------|---------------------------------|
@@ -37,6 +39,14 @@ ToC = true
 | \(\bar{x}\)        | `\bar{x}`       | Line over single character               |
 | \(\mid\)           | `\mid`          | "Such that"                              |
 | \(\Vert\)          | `\Vert`         | Double bar, for norms: \(\Vert x \Vert\) |
+
+## Comparison
+| Symbol  | Code  | Meaning                  |
+|---------|-------|--------------------------|
+| \(\le\) | `\le` | Less than or equal to    |
+| \(\lt\) | `\lt` | Less than                |
+| \(\ge\) | `\ge` | Greater than or equal to |
+| \(\gt\) | `\gt` | Greater than             |
 
 ## Greek Alphabet
 
@@ -117,7 +127,7 @@ ToC = true
 ## Operators
 | Symbol      | Code      | Meaning                        |
 |-------------|-----------|--------------------------------|
-| \(\oplus\)  | `\oplus`   | XOR                            |
+| \(\oplus\)  | `\oplus`   | XOR                           |
 | \(\otimes\) | `\otimes` | Tensor product / cross product |
 
 ## Shapes

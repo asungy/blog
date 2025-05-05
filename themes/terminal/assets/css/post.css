@@ -83,12 +83,8 @@
   margin: 40px 0;
 }
 
-.post ul {
-  list-style: none;
-}
-
 .post ul li:not(:empty)::before {
-  content: "-";
+  content: "";
   position: absolute;
   left: -20px;
   color: var(--accent);

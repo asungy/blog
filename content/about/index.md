@@ -10,4 +10,4 @@ readingTime = false
 
 Hello 👋 I'm currently working as a full-time software engineer and studying as a part-time master's student in AI at Johns Hopkins University.
 
-I created this blog to serve as a little journal for myself as I navigate through my career/hobby.
+I created this little site to serve as a repository of notes for my own personal reference.
