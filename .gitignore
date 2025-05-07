@@ -1,2 +1,14 @@
+# Hugo
 .hugo_build.lock
 public/
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+
+# Jupyter notebook
+scratchpad.ipynb
+.ipynb_checkpoints/
+.virtual_documents/

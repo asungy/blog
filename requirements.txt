@@ -1,0 +1,5 @@
+helix-jupyter-thing
+jupyter
+matplotlib
+numpy
+python-lsp-server

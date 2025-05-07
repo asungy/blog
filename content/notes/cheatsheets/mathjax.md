@@ -9,7 +9,7 @@ ToC = true
 <!-- For formatting: http://markdowntable.com/ -->
 
 ## Arrows
-| Symbol                  | Code                  | Meaning                         |
+| Symbol                  | Code                  | Description                     |
 |-------------------------|-----------------------|---------------------------------|
 | \(\rightarrow\)         | `\rightarrow`         | Right arrow (functions, limits) |
 | \(\leftarrow\)          | `\leftarrow`          | Left arrow                      |
@@ -33,7 +33,7 @@ ToC = true
 | \(\xleftarrow{f}\)      | `\xleftarrow{f}`      | Labeled left arrow              |
 
 ## Bars
-| Symbol/Command     | Code            | Meaning                                  |
+| Symbol/Command     | Code            | Description                              |
 |--------------------|-----------------|------------------------------------------|
 | \(\overline{x+y}\) | `overline{x+y}` | Line over expression                     |
 | \(\bar{x}\)        | `\bar{x}`       | Line over single character               |
@@ -41,7 +41,7 @@ ToC = true
 | \(\Vert\)          | `\Vert`         | Double bar, for norms: \(\Vert x \Vert\) |
 
 ## Comparison
-| Symbol  | Code  | Meaning                  |
+| Symbol  | Code  | Description              |
 |---------|-------|--------------------------|
 | \(\le\) | `\le` | Less than or equal to    |
 | \(\lt\) | `\lt` | Less than                |
@@ -51,7 +51,7 @@ ToC = true
 ## Greek Alphabet
 
 ### Lowercase
-| Symbol          | Code          | Meaning           |
+| Symbol          | Code          | Description       |
 |-----------------|---------------|-------------------|
 | \(\alpha\)      | `\alpha`      | Lowercase alpha   |
 | \(\beta\)       | `\beta`       | Lowercase beta    |
@@ -79,7 +79,7 @@ ToC = true
 | \(\omega\)      | `\omega`      | Lowercase omega   |
 
 ### Uppercase
-| Symbol          | Code          | Meaning           |
+| Symbol          | Code          | Description       |
 |-----------------|---------------|-------------------|
 | \(A\)           | `A`           | Uppercase alpha   |
 | \(B\)           | `B`           | Uppercase beta    |
@@ -107,7 +107,7 @@ ToC = true
 | \(\Omega\)      | `\Omega`      | Uppercase omega   |
 
 ### Variant
-| Symbol          | Code          | Meaning           |
+| Symbol          | Code          | Description       |
 |-----------------|---------------|-------------------|
 | \(\varepsilon\) | `\varepsilon` | Epsilon variant   |
 | \(\vartheta\)   | `\vartheta`   | Theta variant     |
@@ -125,19 +125,19 @@ ToC = true
 | `\mathrm{}`   | Roman (upright)  | \(\mathrm{d}x\)  |
 
 ## Operators
-| Symbol      | Code      | Meaning                        |
+| Symbol      | Code      | Description                    |
 |-------------|-----------|--------------------------------|
 | \(\oplus\)  | `\oplus`   | XOR                           |
 | \(\otimes\) | `\otimes` | Tensor product / cross product |
 
 ## Shapes
-| Symbol           | Code           | Meaning       |
+| Symbol           | Code           | Description   |
 |------------------|----------------|---------------|
 | \(\blacksquare\) | `\blacksquare` | Solid square  |
 | \(\square\)      | `\square`      | Hollow square |
 
 ## Spacing
-| Example        | Code                     | Meaning             |
+| Example        | Code                     | Description         |
 |----------------|--------------------------|---------------------|
 | \(A\!B\)       | `\!`                     | Negative thin space |
 | \(A\,B\)       | `\,`                     | Thin space          |
@@ -149,9 +149,15 @@ ToC = true
 
 
 ## Strikeout
-| Command             | Code              | Meaning          |
+| Command             | Code              | Description      |
 |---------------------|-------------------|------------------|
 | \(\cancel{a}\)      | `\cancel{a}`      | Forward cancel   |
 | \(\bcancel{a}\)     | `\bcancel{a}`     | Backwards cancel |
 | \(\xcancel{a}\)     | `\xcancel{a}`     | Double cancel    |
 | \(\cancelto{a}{b}\) | `\cancelto{a}{b}` | Cancel to        |
+
+## Uncategorized
+| Command               | Code                | Description          |
+|-----------------------|---------------------|----------------------|
+| \(\fbox{a + b}\)      | `\fbox{a + b}`      | Box expression       |
+| \(\underline{a + b}\) | `\underline{a + b}` | Underline expression |

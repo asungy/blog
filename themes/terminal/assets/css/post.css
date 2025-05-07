@@ -1,3 +1,19 @@
+h1, h2, h3, h4, h5, h6 {
+  color: var(--magenta);
+}
+
+blockquote {
+  color: var(--comment);
+}
+
+blockquote > mjx-container, blockquote > p > mjx-container {
+  color: var(--green2);
+}
+
+mjx-container {
+  color: var(--green1);
+}
+
 .index-content {
   margin-top: 20px;
 }
