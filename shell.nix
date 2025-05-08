@@ -12,8 +12,9 @@
     ];
 
     shellHook = ''
-      alias jup='jupyter lab --notebook-dir=notebooks'
-      alias serve='hugo build && pagefind --site public && hugo server --disableFastRender'
-      alias venv='source ./venv/bin/activate && pip install -r requirements.txt'
+      alias activate='source ./venv/bin/activate'
+      alias hugo-serve='hugo build && pagefind --site public && hugo server --disableFastRender'
+      alias jupyter-serve='jupyter lab --notebook-dir=notebooks'
+      alias nb-to-html='jupyter nbconvert --to html'
     '';
   }

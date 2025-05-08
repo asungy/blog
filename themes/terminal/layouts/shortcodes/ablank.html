@@ -1,0 +1,9 @@
+{{ $hasHref := .Get "href" }}
+{{ $hasText := .Get "text" }}
+
+{{ if and $hasHref $hasText}}
+  <a href="{{ .Get "href" | safeURL }}" target="_blank">{{ .Get "text" }}</a>
+{{ else }}
+  {{ errorf "ablank shortcode error occurred in %q (%q)" .Page.File .Page.Permalink }}
+{{ end }}
+

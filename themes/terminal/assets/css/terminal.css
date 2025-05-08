@@ -227,9 +227,8 @@ input[type="checkbox"]:checked {
 img {
   display: block;
   max-width: 100%;
-  border: 8px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 8px;
+  border: 2px solid var(--blue);
+  border-radius: 8px;
   overflow: hidden;
 }
 

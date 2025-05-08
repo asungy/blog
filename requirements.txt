@@ -1,3 +1,4 @@
+graphviz
 helix-jupyter-thing
 jupyter
 matplotlib
