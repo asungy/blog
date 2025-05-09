@@ -14,7 +14,7 @@ layout = 'single'
 - {{<rawhtml>}}<a href="https://configure.zsa.io/voyager/layouts/xmZjx/latest/0" target="_blank">Voyager layout</a>{{</rawhtml>}}
 
 # Cheatsheets
-- [Git](./cheatsheets/git.md)
+- [Linux](./cheatsheets/linux.md)
 - [MathJax](./cheatsheets/mathjax.md)
 
 # Mathematics

@@ -112,7 +112,7 @@ pagination.pagerSize = 5
     lineNos = false
     lineNumbersInTable = false
     noClasses = true
-    style = 'tokyonight-storm'
+    style = 'tokyonight-storm' # https://gohugo.io/quick-reference/syntax-highlighting-styles/
     tabWidth = 4
     wrapperClass = 'highlight'
   [markup.goldmark]
