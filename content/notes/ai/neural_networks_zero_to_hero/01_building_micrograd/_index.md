@@ -121,13 +121,13 @@ print(dgdc)
 Like before, we can validate these values by hand:
 
 \[
-  g(a,b,c) = ab+c
+    g(a,b,c) = ab+c
 \]
 
 \[
-  \frac{\partial g}{\partial a} = b = -3 \hspace{1.5cm}
-  \frac{\partial g}{\partial b} = a = 2  \hspace{1.5cm}
-  \frac{\partial g}{\partial c} = 1
+    \frac{\partial g}{\partial a} = b = -3 \hspace{1.5cm}
+    \frac{\partial g}{\partial b} = a = 2  \hspace{1.5cm}
+    \frac{\partial g}{\partial c} = 1
 \]
 
 ## Implementing the `Value` class
@@ -162,7 +162,7 @@ Value: {
 
 Next, we want to be able to perform operations on our `Value` class. Let's go ahead and implement addition, subtraction, and multiplication magic methods for this class:
 
-```python {linenos=false, hl_lines=["5-15"]}
+```python {caption="Adding operations" linenos=false hl_lines=["5-15"]}
 class Value:
     def __init__(self, value):
         self.value = value
@@ -217,7 +217,7 @@ We now need our `Value` class to maintain some kind of "memory" of how it was cr
 Let's say I have the following equation:
 
 \[
-  1+2=3
+    1+2=3
 \]
 
 This can be modeled with our `Value` class like so:
@@ -230,7 +230,7 @@ This can be modeled with our `Value` class like so:
 
 Let's say we take our `Value(3)` and use it to perform some calculations. But let's also consider that sometime later we want to refer back to `Value(1)` and `Value(2)` and recall that these `Value` objects were added to create `Value(3)`. A solution might look like this:
 
-```python {collapsible="true" collapsed="false"}
+```python {caption="Allowing values to remember how they were constructed." collapsible="true" collapsed="false"}
 class Op(Enum):
     NONE = 0
     ADD = 1
@@ -353,9 +353,31 @@ print(a*b+c)
 
 ### Graph Visualization
 
-As these `Value` objects become more and more nested, it might be easier to visualize them as a graph. This can be done using the [Graphviz](https://graphviz.org/) Python package:
+As these `Value` objects become more and more nested, it might be easier to visualize them as a graph. Here we're going to use the [Graphviz](https://graphviz.org/) package to implement a method for displaying our mathematical expression as a graph:
 
-```python {linenos="false" hl_lines=[7, "48-66"] collapsed="true"}
+```python {caption="Adding a graph rendering method."}
+    def render_graph(self):
+        digraph = Digraph(format="svg", graph_attr={"rankdir": "LR"})
+        queue = deque([self])
+        while queue:
+            current = queue.popleft()
+            current_id = str(id(current))
+            label = "{ %s | value: %.4f }" % (current.label, current.value)
+            digraph.node(name=current_id, label=label, shape="record")
+            if current.operation != Op.NONE:
+                op_id = current_id + str(current.operation)
+                digraph.node(
+                    name=op_id,
+                    label=current.operation.opstr(),
+                )
+                digraph.edge(op_id, current_id)
+                for child in current.children:
+                    digraph.edge(str(id(child)), op_id)
+                    queue.append(child)
+        return digraph
+```
+
+```python {caption="Full code" linenos="false" hl_lines=[7, "48-66"] collapsed="true"}
  class Value:
     def __init__(self, value, children=set(), operation=Op.NONE, label=""):
         self.value = value
@@ -434,3 +456,185 @@ c = Value(10.0, label="c")
 ```
 
 {{<image src="./images/002-graphviz-rendering.svg" position="center">}}
+
+### Backpropagation
+
+> Timestamp: [00:32:10](https://www.youtube.com/watch?v=VMj-3S1tku0&t=1930s)
+
+Now that we have our `Value` class in a more complete state and a nice way to display it, we can start talking about _backpropagation_.
+
+Consider the following function:
+
+\[
+    L = a(b+cd)
+\]
+
+The goal of backpropagation is to figure out how the inputs to a mathematical function affect the output. More concretely, in this example, backpropagation is asking _"if I slightly change the value of \(a\), how does that affect the output of \(L\). Likewise, what happens to \(L\) if I change the value of \(b\), and so on..."_.
+
+Because this is a simple enough equation, we can quickly eyeball it and find the partial derivatives in our head:
+
+\[
+    L = a(b + cd) = ab + acd
+\]
+
+\[\begin{aligned}
+    \frac{\partial L}{\partial a} &= b + cd \hspace{1.5cm} &\frac{\partial L}{\partial b} = a \\[1em]
+    \frac{\partial L}{\partial c} &= ad \hspace{1.5cm} &\frac{\partial L}{\partial d} = ac
+\end{aligned}\]
+
+However, you can imagine this quickly because untenable as we introduce more and more variables. We need to come up with a way to programmatically calculate these partial derivatives.
+
+Let's first try to visualize our our function \(L\) as a graph. For this, we are going to set \(a\), \(b\), \(c\), and \(d\) to arbitrary values:
+
+\[
+    a = -2.0, \hspace{1.0cm} b = 10.0, \hspace{1.0cm} c = 2.0, \hspace{1.0cm} d = -3.0
+\]
+
+Now let's build out this expression using our `Value` class and render it.
+
+```python
+a = Value(-2.0, label="a")
+b = Value(10.0, label="b")
+c = Value(2.0, label="c")
+d = Value(-3.0, label="d")
+e = c*d; e.label = "cd"
+f = b+e; f.label = "b+cd"
+L = a*f; L.label = "a(b+cd)"
+L.render_graph()
+```
+
+{{<image src="./images/003-graphviz-rendering.svg" position="center">}}
+
+For backpropagation, we want to know how tweaking any of these leaf nodes affects the output at the end of the graph. And the way we are going to "propagate" information to and from the leaf nodes is by maintaining a "local gradient" for each node.
+
+```python {caption="Adding local gradients to the Value class" linenos=false hl_lines=[2,7]}
+class Value:
+    def __init__(self, value, children=set(), operation=Op.NONE, label="", gradient=0.0):
+        self.value = value
+        self.children = children
+        self.operation = operation
+        self.label = label
+        self.gradient = gradient
+```
+
+```python {caption="Full code" collapsed=true linenos=true hl_lines=[2,7,54]}
+class Value:
+    def __init__(self, value, children=set(), operation=Op.NONE, label="", gradient=0.0):
+        self.value = value
+        self.children = children
+        self.operation = operation
+        self.label = label
+        self.gradient = gradient
+
+    def __add__(self, other):
+        return Value(
+            value=self.value + other.value,
+            children={self, other},
+            operation=Op.ADD,
+        )
+
+    def __sub__(self, other):        
+        return Value(
+            value=self.value - other.value,
+            children={self, other},
+            operation=Op.SUB,
+        )
+
+    def __mul__(self, other):
+        return Value(
+            value=self.value * other.value,
+            children={self, other},
+            operation=Op.MUL,
+        )
+
+    def __truediv__(self, other):
+        return Value(
+            value=self.value / other.value,
+            children={self, other},
+            operation=Op.DIV,
+        )
+
+    def __str__(self):        
+        s = json.dumps({
+            "value": self.value,
+            "children": [json.loads(str(v)) for v in self.children],
+            "operation": str(self.operation),
+        }, indent=2)
+        return s
+    
+    def __repr__(self):
+        return str(self)
+
+    def render_graph(self):
+        digraph = Digraph(format="svg", graph_attr={"rankdir": "LR"})
+        queue = deque([self])
+        while queue:
+            current = queue.popleft()
+            current_id = str(id(current))
+            label = "%s | value: %.4f | gradient: %.4f" % (current.label, current.value, current.gradient)
+            digraph.node(name=current_id, label=label, shape="record")
+            if current.operation != Op.NONE:
+                op_id = current_id + str(current.operation)
+                digraph.node(
+                    name=op_id,
+                    label=current.operation.opstr(),
+                )
+                digraph.edge(op_id, current_id)
+                for child in current.children:
+                    digraph.edge(str(id(child)), op_id)
+                    queue.append(child)
+        return digraph
+```
+
+Now if we render our graph again, we should see our gradient values.
+
+```python
+a = Value(-2.0, label="a")
+b = Value(10.0, label="b")
+c = Value(2.0, label="c")
+d = Value(-3.0, label="d")
+e = c*d; e.label = "cd"
+f = b+e; f.label = "b+cd"
+L = a*f; L.label = "a(b+cd)"
+L.render_graph()
+```
+{{<image src="./images/004-graphviz-rendering.svg" position="center">}}
+
+#### Calculating gradients by hand
+
+As you can see, our gradients are initialize to `0.0000` and we want to be able fill them out somehow. We'll eventually automate the process, but before we do that let's get a better intuitive understand of how that works by calculating the gradient of a few `Value` objects by hand. When performing backpropagation, we start at the end of our graph and, well — work backwards.
+
+The first one is always the easiest.
+
+\[
+    \frac{\partial(a(b+cd))}{\partial(a(b+cd))} = 1
+\]
+
+This is basically saying "_if we make a change to the output by \(x\), we're making a change to the output by \(x\)_". Not much to overthink here.
+
+Now let's look at how \(a(b+cd)\) changes with respect to \(b+cd\). The answer might be obvious using a simple calculus rule, but you can always prove this to yourself using the formula for the derivative of a function.
+
+\[\begin{aligned}
+    \frac{\partial (a(b+cd))}{\partial (b+cd)} &= \lim_{h \to 0} \frac{(a((b+cd)+h)) - (a(b+cd))}{h} \\
+    &= \lim_{h \to 0} \frac{\bcancel{ab} + \bcancel{acd} + ah - \bcancel{ab} + \bcancel{acd}}{h} \\
+    &= \lim_{h \to 0} \frac{a\bcancel{h}}{h} \\
+    &= a
+\end{aligned}\]
+
+You can do the same proof for how \(a(b+cd)\) changes with respect to \(a\) and find that \(\frac{\partial a(b+cd)}{\partial a} = b+cd\). At this point, you may notice that the derivative of the product of two values with respect to one of the values is just the other value. You can think of changes to one of the values is being multiplied by the other value, if that helps.
+
+So, if we fill in the gradients we currently have, we have something like the following.
+
+{{<image src="./images/005-graphviz-rendering.svg" position="center">}}
+
+Solving for \(\frac{\partial (a(b+cd))}{\partial b}\), we get the following.
+
+\[\begin{aligned}
+    \frac{\partial (a(b+cd))}{\partial b} &= \lim_{h \to 0} \frac{a((b+h)+cd) - a(b+cd)}{h} \\
+    &= \lim_{h \to 0} \frac{\bcancel{ab}+ah+\bcancel{acd}-\bcancel{ab}+\bcancel{acd}}{h} \\
+    &= \frac{ah}{h} = a
+\end{aligned}\]
+
+If we solve for \(\frac{\partial (a(b+cd))}{\partial cd}\), we find that \((a(b+cd))\) with respect to \(cd\) changes by a factor of \(a\) as well. When performing backpropagation, we can think of the gradient dispersing to all of the children nodes when traversing through an addition operation.
+
+Okay, I think that's enough hand calculations. Let's try and figure out a way that we can calculate the gradients automatically for each node.

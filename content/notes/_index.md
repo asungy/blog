@@ -10,8 +10,9 @@ layout = 'single'
 - [Neural Networks: Zero to Hero](./ai/neural_networks_zero_to_hero)
 
 # Bookmarks
-- {{<rawhtml>}}<a href="https://configure.zsa.io/moonlander/layouts/z4e5a/latest/0" target="_blank">Moonlander layout</a>{{</rawhtml>}}
-- {{<rawhtml>}}<a href="https://configure.zsa.io/voyager/layouts/xmZjx/latest/0" target="_blank">Voyager layout</a>{{</rawhtml>}}
+ - {{<ablank href="https://configure.zsa.io/moonlander/layouts/z4e5a/latest/0" text="Keyboard layout: Moonlander">}}
+ - {{<ablank href="https://configure.zsa.io/voyager/layouts/xmZjx/latest/0" text="Keyboard layout: Voyager">}}
+ - {{<ablank href="https://symbl.cc/" text="Unicode search">}}
 
 # Cheatsheets
 - [Linux](./cheatsheets/linux.md)
