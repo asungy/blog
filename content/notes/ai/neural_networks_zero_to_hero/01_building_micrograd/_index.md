@@ -43,6 +43,7 @@ plt.plot(xs, ys)
 ```
 {{<image src="./images/001-function-plot.png" position="center">}}
 
+{{<rawhtml>}}<div id="derivative-formula"></div>{{</rawhtml>}}
 Recall the formula to find the derivative of the function \(f(x)\):
 
 \[
@@ -457,9 +458,9 @@ c = Value(10.0, label="c")
 
 {{<image src="./images/002-graphviz-rendering.svg" position="center">}}
 
-### Backpropagation
+## Backpropagation
 
-> Timestamp: [00:32:10](https://www.youtube.com/watch?v=VMj-3S1tku0&t=1930s)
+> Timestamp: {{<ablank href="https://www.youtube.com/watch?v=VMj-3S1tku0&t=1930s" text="00:32:10">}}
 
 Now that we have our `Value` class in a more complete state and a nice way to display it, we can start talking about _backpropagation_.
 
@@ -600,7 +601,7 @@ L.render_graph()
 ```
 {{<image src="./images/004-graphviz-rendering.svg" position="center">}}
 
-#### Calculating gradients by hand
+### Calculating gradients by hand
 
 As you can see, our gradients are initialize to `0.0000` and we want to be able fill them out somehow. We'll eventually automate the process, but before we do that let's get a better intuitive understand of how that works by calculating the gradient of a few `Value` objects by hand. When performing backpropagation, we start at the end of our graph and, well — work backwards.
 
@@ -612,7 +613,7 @@ The first one is always the easiest.
 
 This is basically saying "_if we make a change to the output by \(x\), we're making a change to the output by \(x\)_". Not much to overthink here.
 
-Now let's look at how \(a(b+cd)\) changes with respect to \(b+cd\). The answer might be obvious using a simple calculus rule, but you can always prove this to yourself using the formula for the derivative of a function.
+Now let's look at how \(a(b+cd)\) changes with respect to \(b+cd\). The answer might be obvious using a simple calculus rule, but you can always prove this to yourself using [the formula for the derivative of a function](#derivative-formula).
 
 \[\begin{aligned}
     \frac{\partial (a(b+cd))}{\partial (b+cd)} &= \lim_{h \to 0} \frac{(a((b+cd)+h)) - (a(b+cd))}{h} \\
@@ -637,4 +638,26 @@ Solving for \(\frac{\partial (a(b+cd))}{\partial b}\), we get the following.
 
 If we solve for \(\frac{\partial (a(b+cd))}{\partial cd}\), we find that \((a(b+cd))\) with respect to \(cd\) changes by a factor of \(a\) as well. When performing backpropagation, we can think of the gradient dispersing to all of the children nodes when traversing through an addition operation.
 
-Okay, I think that's enough hand calculations. Let's try and figure out a way that we can calculate the gradients automatically for each node.
+{{<image src="./images/006-graphviz-rendering.svg" position="center">}}
+
+Lastly, we need to solve for the gradients \(c\) and \(d\).
+
+Let's first solve for \(c\).
+
+\[\begin{aligned}
+    \frac{\partial (a(b+cd))}{\partial c} &= \lim_{h \to 0} \frac{a(b+(c+h)d)-a(b+cd)}{h} \\
+    &= \lim_{h \to 0} \frac{a(b+cd+dh)-ab-acd}{h} \\
+    &= \lim_{h \to 0} \frac{\bcancel{ab}+\bcancel{acd}+adh-\bcancel{ab}-\bcancel{acd}}{h} \\
+    &= ad
+\end{aligned}\]
+
+If we solved for the gradient of \(d\), we would unsurprisingly get \(\frac{\partial (a(b+cd))}{\partial d} = ac\). So I initially mentioned that in multiplication, the gradient for one value is just the other value. But this is not completely true. Here, we can see that the "other value" is being multiplied by \(a\). So multiplication involves not only just the other value but multiplying that value by the parent node's gradient.
+
+{{<image src="./images/007-graphviz-rendering.svg" position="center">}}
+
+So we have finally filled out the gradients for our expression. Obviously to programmatically find the gradients this way is intractable, so we need to come up with another solution to automate this process.
+
+<!-- ### Calculating gradients automatically -->
+
+
+<!-- LEFT OFF: https://youtu.be/VMj-3S1tku0?t=3235 -->
