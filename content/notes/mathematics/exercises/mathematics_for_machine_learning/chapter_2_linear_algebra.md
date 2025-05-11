@@ -24,7 +24,7 @@ In order to show that \((\mathbb{R} \setminus \{-1\}, \star)\) in an Abelian gro
 
 #### Proving that \(\star\) is closed under \(\mathbb{R} \setminus \{-1\}\)
 
-Note that \(\star\) contains the operations of addition and multiplication. Because \(\mathbb{R}\) is [ring](/notes/mathematics/definitions/ring), by definition \(\mathbb{R}\) is closed under addition and multiplication and thus closed under \(\star\).
+Note that \(\star\) contains the operations of addition and multiplication. Because \(\mathbb{R}\) is a [ring](/notes/mathematics/definitions/ring), by definition \(\mathbb{R}\) is closed under addition and multiplication and thus closed under \(\star\).
 
 However, we need to further prove that \(\star\) cannot produce \(-1\). We will prove this by contradiction.
 
@@ -132,3 +132,17 @@ Because \(\mathbb{R}\) is a [commutative ring](/notes/mathematics/definitions/co
 
 Solve \(3 \star x \star x = 15\) in the Abelian group \((\mathbb{R} \setminus \{-1\}, \star)\).
 
+{{<rawhtml>}}<hr style="width: 50%; margin: 0 auto;">{{</rawhtml>}}
+
+\[\begin{aligned}
+  3 \star x \star x &= 15 \\
+  (3x + 3 + x) \star x &= 15 \\
+  (3x + 3 + x)x + (3x + 3 + x) + x &= 15 \\
+  3x^2 + 3x + x^2 + 3x + 3 + x + x &= 15 \\
+  4x^2 + 8x + 3 &= 15 \\
+  4x^2 + 8x &= 12 \\
+  x^2 + 2x &= 3 \\
+  x^2 + 2x - 3 &= 0 \\
+  (x+3)(x-1) &= 0 \\
+  \fbox{x = \{-3, 1\}}
+\end{aligned}\]
