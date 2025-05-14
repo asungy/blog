@@ -3,7 +3,5 @@ draft = false
 title = 'Exercises'
 readingTime = false
 ToC = false
-layout = 'single'
+layout = 'list_sections'
 +++
-
-- [Mathematics for Machine Learning](./mathematics_for_machine_learning)

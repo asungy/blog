@@ -33,12 +33,13 @@ ToC = true
 | \(\xleftarrow{f}\)      | `\xleftarrow{f}`      | Labeled left arrow              |
 
 ## Bars
-| Symbol/Command     | Code            | Description                              |
-|--------------------|-----------------|------------------------------------------|
-| \(\overline{x+y}\) | `overline{x+y}` | Line over expression                     |
-| \(\bar{x}\)        | `\bar{x}`       | Line over single character               |
-| \(\mid\)           | `\mid`          | "Such that"                              |
-| \(\Vert\)          | `\Vert`         | Double bar, for norms: \(\Vert x \Vert\) |
+| Symbol/Command     | Code                   | Description                              |
+|--------------------|------------------------|------------------------------------------|
+| \(\overline{x+y}\) | `overline{x+y}`        | Line over expression                     |
+| \(\bar{x}\)        | `\bar{x}`              | Line over single character               |
+| \(\mid\)           | `\mid`                 | "Such that"                              |
+| \(\Vert\)          | `\Vert`                | Double bar, for norms: \(\Vert x \Vert\) |
+| \(\mid x+y \mid\)  | `\left\| x+y \right\|` | Auto-sized bars                          |
 
 ## Comparison
 | Symbol  | Code  | Description              |

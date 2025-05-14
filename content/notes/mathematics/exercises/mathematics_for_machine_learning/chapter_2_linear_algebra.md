@@ -146,3 +146,30 @@ Solve \(3 \star x \star x = 15\) in the Abelian group \((\mathbb{R} \setminus \{
   (x+3)(x-1) &= 0 \\
   \fbox{x = \{-3, 1\}}
 \end{aligned}\]
+
+## 2.2
+
+Let \(n\) be in \(\mathbb{N} \setminus \{0\}\). Let \(k,x \in \mathbb{Z}\). We define the congruence class \(\bar{k}\) of the integer \(k\) as the set
+
+\[\begin{aligned}
+  \bar{k} &= \{x \in \mathbb{Z} \mid x - k = 0 \text{ (mod} \textit{n} \text{)}\} \\
+  &= \{x \in \mathbb{Z} \mid (\exists a \in \mathbb{Z}): \: (x -k = n \cdot a)\}
+\end{aligned}\]
+
+We now define \(\mathbb{Z}/n\mathbb{Z}\) (sometimes written as \(\mathbb{Z}_n\)) as the set of all congruence classes modulo \(n\). Euclidean division implies that this set is a finite set containing \(n\) elements:
+
+\[
+  \mathbb{Z}_n = \{\bar{0}, \bar{1}, ..., \overline{n-1}\}
+\]
+
+For all \(\bar{a}, \bar{b} \in \mathbb{Z}_n\), we define
+
+\[
+  \bar{a} \oplus \bar{b} := \overline{a+b}
+\]
+
+### 2.2a
+
+Show that \((\mathbb{Z}_n, \oplus)\) is a group. Is it Abelian?
+
+{{<rawhtml>}}<hr style="width: 50%; margin: 0 auto;">{{</rawhtml>}}
