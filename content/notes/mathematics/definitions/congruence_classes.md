@@ -1,6 +1,6 @@
 +++
 draft = false
-title = 'Congrunence Classes'
+title = 'Congruence Classes'
 readingTime = false
 math = true
 +++

@@ -149,10 +149,12 @@ Solve \(3 \star x \star x = 15\) in the Abelian group \((\mathbb{R} \setminus \{
 
 ## 2.2
 
-Let \(n\) be in \(\mathbb{N} \setminus \{0\}\). Let \(k,x \in \mathbb{Z}\). We define the congruence class \(\bar{k}\) of the integer \(k\) as the set
+{{<rawhtml>}}<div id="congruence-class-definition"></div>{{</rawhtml>}}
+
+Let \(n\) be in \(\mathbb{N} \setminus \{0\}\). Let \(k,x \in \mathbb{Z}\). We define the [congruence class](/notes/mathematics/definitions/congruence_classes/) \(\bar{k}\) of the integer \(k\) as the set
 
 \[\begin{aligned}
-  \bar{k} &= \{x \in \mathbb{Z} \mid x - k = 0 \text{ (mod} \textit{n} \text{)}\} \\
+  \bar{k} &= \{x \in \mathbb{Z} \mid x - k = 0 \text{ (mod } \textit{n} \text{)}\} \\
   &= \{x \in \mathbb{Z} \mid (\exists a \in \mathbb{Z}): \: (x -k = n \cdot a)\}
 \end{aligned}\]
 
@@ -173,3 +175,92 @@ For all \(\bar{a}, \bar{b} \in \mathbb{Z}_n\), we define
 Show that \((\mathbb{Z}_n, \oplus)\) is a group. Is it Abelian?
 
 {{<rawhtml>}}<hr style="width: 50%; margin: 0 auto;">{{</rawhtml>}}
+
+In order to show that \((\mathbb{Z}_n, \oplus)\) in an Abelian group, we need to first show that it is a group.
+
+#### Intuiting congruence classes
+
+> Congruence classes were a bit difficult for me to wrap my head around so I needed to write this section for myself. This is not required for proving that \((\mathbb{Z}_n, \oplus)\) is a group.
+
+Let's try to look at congruence classes in a different way to get a better intuition of what they actually look like in practice. Let's consider the example:
+
+\[
+  \mathbb{Z}_4 = \{\bar{0}, \bar{1}, \bar{2}, \bar{3}\}
+\]
+
+In this example \(n = 4\). Let's look at the congruence class \(\bar{2}\). From the [definition of congruence classes](#congruence-class-definition), this looks like:
+
+\[
+  \bar{2} = \{x \in \mathbb{Z} \mid (\exists a \in \mathbb{Z}): \: (x - 2 = 4 \cdot a)\}
+\]
+
+Let's actually put some numbers in this set. As you can see, \(\bar{2}\) is an infinite set, so let's just start with \(a=\{1,2,3\}\).
+
+\[\begin{aligned}
+  \bar{2} &= \{..., \: 4 \cdot 1 + 2, \: 4 \cdot 2 + 2, \: 4 \cdot 3 + 2, \: ...\} \\
+  &= \{..., \: 6, \: 10, \: 14, \: ...\}
+\end{aligned}\]
+
+Working from this example, we can see the general form.
+
+{{<rawhtml>}}<div id="congruence-class-general-form"></div>{{</rawhtml>}}
+
+\[\begin{aligned}
+  \bar{k} &= \{..., \: n(-2)+k, \: n(-1)+k, \: n(0)+k, \: n(1)+k, \: n(2)+k, \: ...\} \\
+  \bar{k} &= \{..., \: -2n+k, \: -n+k, \: k, \: n+k, \: 2n+k, \: ...\}
+\end{aligned}\]
+
+#### Proving \(\oplus\) is closed under \(\mathbb{Z}_n\)
+
+To show that \(\oplus\) is closed under \(\mathbb{Z}_n\), we want to show that \((\bar{a} \oplus \bar{b}) \in \mathbb{Z}_n\).
+
+From the [general form of the congruence class](#congruence-class-general-form), we can see that:
+
+\[
+  \bar{a} \oplus \bar{b} = \overline{a+b} = \{..., \: -2n+(a+b), \: -n+(a+b), \: a+b, \: n+(a+b), \: 2n+(a+b), \: ...\}
+\]
+
+Note, that \(\bar{a}, \bar{b} \in \mathbb{Z}_n \implies a,b \leq n-1\).
+
+If \(a+b \leq n-1\), then \(\overline{a+b} \in \mathbb{Z}_n\). However, it may not be immediately obvious that \(\overline{a+b} \in \mathbb{Z}_n\) for \(a+b \geq n\). So we want to prove:
+\[
+a,b \in \mathbb{Z}_n, \: a+b \geq n \mid (\exists c \in \mathbb{Z}): \: c \lt n, \: \bar{c} = \overline{a+b}
+\]
+
+That is, for any set \(a+b \geq n \mid \overline{a+b}\), there is equivalent set \(\bar{c}\) where \(c \lt n\). 
+
+Notice that the elements in the set \(\overline{a+b}\) differ by \(n\). So \(\exists x \in \mathbb{Z} \mid \overline{a+b} = \overline{a+b-xn}\) and \(a+b-xn \lt n\). Because we have shown that we can find an equivalent congruence class for any \(\overline{a+b}\) that is in \(\mathbb{Z}_n\), we have shown that \(\oplus\) is closed under \(\mathbb{Z}_n\).
+
+#### Proving \(\oplus\) is associative under \(\mathbb{Z}_n\)
+
+Addition is associative for \(\mathbb{Z}\) because \(\mathbb{Z}\) is a [commutative ring](/notes/mathematics/definitions/commutative_ring/#example), therefore \(\oplus\) (e.g. \(a \oplus b := \overline{a+b}\)) is associative under \(\mathbb{Z}_n\).
+
+#### Proving that \((\mathbb{Z}_n, \oplus)\) has a neutral element
+
+We want to show that \(\exists \bar{e} \in \mathbb{Z}_n, \forall \bar{k} \in \mathbb{Z}_n : \: \bar{k} \oplus \bar{e} = \bar{e} \oplus \bar{k} = \bar{k}\).
+
+Consider \(\bar{e} = \bar{0}\).
+
+\[
+  \bar{k} \oplus \bar{0} = \bar{0} \oplus \bar{k} = \overline{k+0} = \bar{k}
+\]
+
+Therefore, the neutral element in \((\mathbb{Z}_n, \oplus)\) is \(\bar{0}\).
+
+#### Proving that \(\mathbb{Z}_n, \oplus\) has an inverse element
+
+> To-Do
+
+## 2.3
+
+> To-Do
+
+## 2.4
+
+Compute the following matrix products, if possible:
+
+### 2.4a
+
+\[
+  
+\]

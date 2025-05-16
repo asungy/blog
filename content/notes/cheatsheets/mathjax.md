@@ -125,6 +125,72 @@ ToC = true
 | `\mathfrak{}` | Fraktur / Gothic | \(\mathfrak{g}\) |
 | `\mathrm{}`   | Roman (upright)  | \(\mathrm{d}x\)  |
 
+## Matrices
+
+### Matrix without brackets
+```latex
+\begin{matrix}
+1 & 2 \\
+3 & 4
+\end{matrix}
+```
+#### Example
+\[
+\begin{matrix}
+1 & 2 \\
+3 & 4
+\end{matrix}
+\]
+
+### Matrix with parentheses
+```latex
+\begin{pmatrix}
+1 & 2 \\
+3 & 4
+\end{pmatrix}
+```
+
+#### Example
+\[
+\begin{pmatrix}
+1 & 2 \\
+3 & 4
+\end{pmatrix}
+\]
+
+### Matrix with square brackets
+```latex
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+```
+
+#### Example
+\[
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+\]
+
+### Matrix with vertical bars (determinants)
+```latex
+\begin{vmatrix}
+a & b \\
+c & d
+\end{vmatrix}
+```
+
+#### Example
+\[
+\begin{vmatrix}
+a & b \\
+c & d
+\end{vmatrix}
+\]
+
+
 ## Operators
 | Symbol      | Code      | Description                    |
 |-------------|-----------|--------------------------------|
