@@ -1,9 +1,11 @@
 +++
 draft = false
-title = 'Linux'
+title = 'Terminal Tools'
 readingTime = false
 ToC = true
 +++
+
+> Just some notes on tools I frequently use in the terminal.
 
 ## FFMPEG
 
@@ -39,3 +41,21 @@ for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
   fi
 done
 ```
+
+## tr
+
+### Converting text to lowercase
+
+```bash
+echo "YOUR STRING" | tr '[:upper:]' '[:lower:]'
+```
+
+## Zellij
+
+### Horizontal split on a pane
+
+Some times when I create a new pane using `<Alt-n>`, it uses a vertical split rather than a horizontal split.
+
+To do a horizontal split do: `<Ctrl-g>, p, <Alt-g>, d`.
+
+Note: This works as of [this configuration](https://github.com/asungy/loadout/blob/e06a468456e4c3079bd83b6f0805994bdf29e8f8/home/config/zellij/config.kdl).

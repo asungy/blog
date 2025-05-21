@@ -213,6 +213,8 @@ c & d
 | \(A\ B\)       | `\ ` (backslash + space) | Standard space      |
 | \(A \quad B\)  | `\quad`                  | Quad                |
 | \(A \qquad B\) | `\qquad`                 | Double quad         |
+| N/A            | `\newline`               | Line break          |
+| N/A            | `\vspace{10pt}`          | Vertical space      |
 
 
 ## Strikeout

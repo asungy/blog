@@ -9,7 +9,7 @@ math = true
 A [group](/notes/mathematics/definitions/group) \(G\) is said to be **Abelian** if \(a \star b = b \star a\) for all \(a,b \in G\).
 
 ## Example
-See [this exercise](/notes/mathematics/exercises/mathematics_for_machine_learning/chapter_2_linear_algebra/#21a).
+See [this exercise](/notes/books/mathematics_for_machine_learning/exercises/chapter_2_linear_algebra/#21a).
 
 ## Source
 <!-- Author(s). Title of Textbook. Edition (if applicable). Publisher, Year. Page(s) used. -->

@@ -1,6 +1,6 @@
 +++
 draft = false
-title = 'Building Micrograd'
+title = 'Building Micrograd (draft)'
 readingTime = true
 math = true
 ToC = true
@@ -24,8 +24,6 @@ import numpy as np
 ```
 
 ## Derivatives
-
-> Timestamp: {{<ablank href="https://www.youtube.com/watch?v=VMj-3S1tku0&t=488s" text="00:08:08">}}
 
 Let's start simple. Consider the following function:
 
@@ -76,8 +74,6 @@ We can verify that this works by computing the derivative as if we were back doi
 The essence of the derivative is a bit abstract and requires more foundational knowledge to truly appreciate, but we can make do with the general description that the derivative of a function tells us by what factor that function changes at any given point.
 
 ## Partial Derivatives
-
-> Timestamp: {{<ablank href="https://www.youtube.com/watch?v=VMj-3S1tku0&t=852s" text="00:14:12">}}
 
 Previously, we examined the derivative of a function with respect to one variable. Now, we're going to study a function with multiple variables.
 
@@ -133,8 +129,6 @@ Like before, we can validate these values by hand:
 
 ## Implementing the `Value` class
 
-> Timestamp: {{<ablank href="https://www.youtube.com/watch?v=VMj-3S1tku0&t=1149s" text="00:19:09">}}
-
 Now we're going to implement a `Value` class that will serve as a building block for developing neural networks. As always, we'll start simple. We first and foremost want our `Value`class to represent a numerical value.
 
 ```python
@@ -161,9 +155,9 @@ Value: {
 }
 ```
 
-Next, we want to be able to perform operations on our `Value` class. Let's go ahead and implement addition, subtraction, and multiplication magic methods for this class:
+Next, we want to be able to perform operations on our `Value` class. Let's go ahead and implement addition and multiplication magic methods for this class:
 
-```python {caption="Adding operations" linenos=false hl_lines=["5-15"]}
+```python {caption="Adding operations" linenos=false hl_lines=["5-9"]}
 class Value:
     def __init__(self, value):
         self.value = value
@@ -171,15 +165,9 @@ class Value:
     def __add__(self, other):
         return Value(self.value + other.value)
 
-    def __sub__(self, other):
-        return Value(self.value - other.value)
-
     def __mul__(self, other):
         return Value(self.value * other.value)
 
-    def __truediv__(self, other):
-        return Value(self.value / other.value)
-    
     def __repr__(self):
         s = json.dumps({
             "value": self.value   
@@ -231,13 +219,11 @@ This can be modeled with our `Value` class like so:
 
 Let's say we take our `Value(3)` and use it to perform some calculations. But let's also consider that sometime later we want to refer back to `Value(1)` and `Value(2)` and recall that these `Value` objects were added to create `Value(3)`. A solution might look like this:
 
-```python {caption="Allowing values to remember how they were constructed." collapsible="true" collapsed="false"}
+```python {caption="Op enum class" collapsible="true" collapsed="false"}
 class Op(Enum):
     NONE = 0
     ADD = 1
-    SUB = 2
-    MUL = 3
-    DIV = 4
+    MUL = 2
 
     def __str__(self):
         match self:
@@ -245,12 +231,8 @@ class Op(Enum):
                 return "none"
             case Op.ADD:
                 return "addition"
-            case Op.SUB:
-                return "subtraction"
             case Op.MUL:
                 return "multiplication"
-            case Op.DIV:
-                return "division"
             case _:
                 raise ValueError("Unknown operation")
 
@@ -260,15 +242,14 @@ class Op(Enum):
                 return ""
             case Op.ADD:
                 return "+"
-            case Op.SUB:
-                return "-"
             case Op.MUL:
                 return "*"
-            case Op.DIV:
-                return "/"
             case _:
                 raise ValueError("Unknown operation")
 
+```
+
+```python {caption="Allowing the Value class to &ldquo;remember&rdquo; how they were constructed." collapsible="true" collapsed="false"}
 class Value:
     def __init__(self, value, children=set(), operation=Op.NONE):
         self.value = value
@@ -282,25 +263,11 @@ class Value:
             operation=Op.ADD,
         )
 
-    def __sub__(self, other):        
-        return Value(
-            value=self.value - other.value,
-            children={self, other},
-            operation=Op.SUB,
-        )
-
     def __mul__(self, other):
         return Value(
             value=self.value * other.value,
             children={self, other},
             operation=Op.MUL,
-        )
-
-    def __truediv__(self, other):
-        return Value(
-            value=self.value / other.value,
-            children={self, other},
-            operation=Op.DIV,
         )
 
     def __str__(self):        
@@ -352,6 +319,8 @@ print(a*b+c)
 }
 ```
 
+We can see a tree-like structure that represents the nodes we use for the final calculation `a*b+c`.
+
 ### Graph Visualization
 
 As these `Value` objects become more and more nested, it might be easier to visualize them as a graph. Here we're going to use the [Graphviz](https://graphviz.org/) package to implement a method for displaying our mathematical expression as a graph:
@@ -378,7 +347,7 @@ As these `Value` objects become more and more nested, it might be easier to visu
         return digraph
 ```
 
-```python {caption="Full code" linenos="false" hl_lines=[7, "48-66"] collapsed="true"}
+```python {caption="Full code" linenos=false hl_lines=[7, "34-52"] collapsed="true"}
  class Value:
     def __init__(self, value, children=set(), operation=Op.NONE, label=""):
         self.value = value
@@ -394,25 +363,11 @@ As these `Value` objects become more and more nested, it might be easier to visu
             operation=Op.ADD,
         )
 
-    def __sub__(self, other):        
-        return Value(
-            value=self.value - other.value,
-            children={self, other},
-            operation=Op.SUB,
-        )
-
     def __mul__(self, other):
         return Value(
             value=self.value * other.value,
             children={self, other},
             operation=Op.MUL,
-        )
-
-    def __truediv__(self, other):
-        return Value(
-            value=self.value / other.value,
-            children={self, other},
-            operation=Op.DIV,
         )
 
     def __str__(self):        
@@ -459,8 +414,6 @@ c = Value(10.0, label="c")
 {{<image src="./images/002-graphviz-rendering.svg" position="center">}}
 
 ## Backpropagation
-
-> Timestamp: {{<ablank href="https://www.youtube.com/watch?v=VMj-3S1tku0&t=1930s" text="00:32:10">}}
 
 Now that we have our `Value` class in a more complete state and a nice way to display it, we can start talking about _backpropagation_.
 
@@ -518,7 +471,7 @@ class Value:
         self.gradient = gradient
 ```
 
-```python {caption="Full code" collapsed=true linenos=true hl_lines=[2,7,54]}
+```python {caption="Full code" collapsed=true linenos=false hl_lines=[2,7,40]}
 class Value:
     def __init__(self, value, children=set(), operation=Op.NONE, label="", gradient=0.0):
         self.value = value
@@ -534,25 +487,11 @@ class Value:
             operation=Op.ADD,
         )
 
-    def __sub__(self, other):        
-        return Value(
-            value=self.value - other.value,
-            children={self, other},
-            operation=Op.SUB,
-        )
-
     def __mul__(self, other):
         return Value(
             value=self.value * other.value,
             children={self, other},
             operation=Op.MUL,
-        )
-
-    def __truediv__(self, other):
-        return Value(
-            value=self.value / other.value,
-            children={self, other},
-            operation=Op.DIV,
         )
 
     def __str__(self):        
@@ -601,7 +540,7 @@ L.render_graph()
 ```
 {{<image src="./images/004-graphviz-rendering.svg" position="center">}}
 
-### Calculating gradients by hand
+### Calculating gradients by manually
 
 As you can see, our gradients are initialize to `0.0000` and we want to be able fill them out somehow. We'll eventually automate the process, but before we do that let's get a better intuitive understand of how that works by calculating the gradient of a few `Value` objects by hand. When performing backpropagation, we start at the end of our graph and, well — work backwards.
 
@@ -657,7 +596,164 @@ If we solved for the gradient of \(d\), we would unsurprisingly get \(\frac{\par
 
 So we have finally filled out the gradients for our expression. Obviously to programmatically find the gradients this way is intractable, so we need to come up with another solution to automate this process.
 
-<!-- ### Calculating gradients automatically -->
+### Calculating gradients automatically
 
+When we were trying to calculate gradients by hand, we ended up using the [derivative formula](#derivative-formula). But it's also important to note we could have just easily used [the chain rule](https://en.wikipedia.org/wiki/Chain_rule#Intuitive_explanation).
 
-<!-- LEFT OFF: https://youtu.be/VMj-3S1tku0?t=3235 -->
+#### Chain rule: addition example
+In the case for calculating the gradient of expression with respect to \(b\) (where \(b\) is involved in an addition operation), we can see that:
+
+\[
+    \frac{\partial (a(b+cd))}{\partial b} = \frac{\partial (a(b+cd))}{\partial (b+cd)} \cdot \frac{\partial (b+cd)}{\partial b}
+\]
+
+From our hand calculations, we know that \(\frac{\partial (a(b+cd))}{\partial (b+cd)} = -2.0\) and using simple calculus rules, \(\frac{\partial (b+cd)}{\partial b} = 1\), so \(\frac{\partial (a(b+cd))}{\partial b} = -2.0\). Like I mentioned before, when performing back propagation on the addition operator, we can think of the gradient from the resulting node dispersing back to its children nodes. In other words, all children nodes will receive the same gradient as its parent through the addition operator.
+
+#### Chain rule: multiplication example
+
+Similarly, calculating the gradient for the expression with respect to \(c\) (where \(c\) is involved in a multiplication operation) looks like the following:
+
+\[
+    \frac{\partial (a(b+cd))}{\partial c} = \frac{\partial (a(b+cd))}{\partial (b+cd)} \cdot \frac{\partial (b+cd)}{\partial cd} \cdot \frac{\partial cd}{\partial c}
+\]
+
+From our hand calculations, we know that \(\frac{\partial (a(b+cd))}{\partial (b+cd)} = -2.0\). Using simple calculus rules, we see that \(\frac{\partial (b+cd)}{\partial cd} = 1\) and \(\frac{\partial cd}{\partial c} = -3\), so \(\frac{\partial (a(b+cd))}{\partial c} = -2 \cdot \ 1 \cdot -3 = 6\). The insight to realize here is that the gradient of a node involved in multiplication is the product of the resulting node's gradient and the sibling node's value.
+
+#### Creating `backward` functions for `Value` operations
+
+So now that we have come up with some general steps to calculate the gradients for nodes involved in addition and multiplication, we can implement this is in code. The idea here is to have each node have a callback called `backward` which will be used to update the gradients of its children. In the case of leaf nodes, this function will do nothing.
+
+For addition, we modifying the existing magic function to look like the following:
+
+```python {caption="Modifying the + operator to assign a backward function" linenos=false hl_lines=[]}
+    def __add__(self, other):
+        result = Value(
+            value=self.value + other.value,
+            children={self, other},
+            operation=Op.ADD,
+        )
+        def backward():
+            self.gradient += result.gradient
+            other.gradient += result.gradient
+        result.backward = backward
+        return result
+```
+
+Notice in the `backward` closure, the gradients of both children nodes (`self` and `other`) are being assigned to the parent's gradient (`result`).
+
+We also need to modify the multiplication operation as well:
+
+```python {caption="Modifying the * operator to assign a backward function" linenos=false hl_lines=[]}
+    def __mul__(self, other):
+        result = Value(
+            value=self.value * other.value,
+            children={self, other},
+            operation=Op.MUL,
+        )
+        def backward():
+            self.gradient += other.value * result.gradient
+            other.gradient += self.value * result.gradient
+        result.backward = backward
+        return result
+```
+
+Here the backward closure just assigns the gradients of the children nodes to the sibling node's value multiplied by the parent's gradient.
+
+> Notice how we are accumulating the gradients here by using the `+=` operator. If we just did `self.gradient = ...` and `other.gradient = ...`, this would end up causing a bug in the case where a node is used multiple times because each `backward` call would cause the node's gradient to be overwritten.
+
+#### Implementing a `backpropagation` method
+
+The last thing we need to do is to implement a method to kick off the whole backpropagation process.
+
+```python {caption="Implementing the backpropagation method" linenos=false hl_lines=[]}
+    def backpropagation(self):
+        self.gradient = 1.0
+        queue = [self]
+        while len(queue) > 0:
+            current = queue[0]
+            queue = queue[1:]
+            current.backward()
+            queue.extend([child for child in current.children])
+```
+
+Each node will be able to call a `backpropagation` method which will calculate the gradients for all of its descendents. The calling node will immediately have its gradient assigned to a value of `1`. Then we use a queue data structure to perform a breath-first traversal of the graph and call the `backward` closure on each child node. This process repeats until we have traversed the whole graph and have our gradients calculated.
+
+Here is the full code:
+
+```python {caption="Value class with automatic backpropagation" linenos=false hl_lines=[] collapsible=true}
+class Value:
+    def __init__(self, value, children=set(), operation=Op.NONE, label="", gradient=0.0):
+        self.value = value
+        self.children = children
+        self.operation = operation
+        self.label = label
+        self.gradient = gradient
+        self.backward = lambda: None
+
+    def backpropagation(self):
+        self.gradient = 1.0
+        queue = [self]
+        while len(queue) > 0:
+            current = queue[0]
+            queue = queue[1:]
+            current.backward()
+            queue.extend([child for child in current.children])
+    
+    def __add__(self, other):
+        result = Value(
+            value=self.value + other.value,
+            children={self, other},
+            operation=Op.ADD,
+        )
+        def backward():
+            self.gradient += result.gradient
+            other.gradient += result.gradient
+        result.backward = backward
+        return result
+        
+
+    def __mul__(self, other):
+        result = Value(
+            value=self.value * other.value,
+            children={self, other},
+            operation=Op.MUL,
+        )
+        def backward():
+            self.gradient += other.value * result.gradient
+            other.gradient += self.value * result.gradient
+        result.backward = backward
+        return result
+        
+    def __str__(self):        
+        s = json.dumps({
+            "value": self.value,
+            "children": [json.loads(str(v)) for v in self.children],
+            "operation": str(self.operation),
+        }, indent=2)
+        return s
+    
+    def __repr__(self):
+        return str(self)
+        
+    def render_graph(self):
+        digraph = Digraph(format="svg", graph_attr={"rankdir": "LR"})
+        queue = deque([self])
+        while queue:
+            current = queue.popleft()
+            current_id = str(id(current))
+            label = "%s | value: %.4f | gradient: %.4f" % (current.label, current.value, current.gradient)
+            digraph.node(name=current_id, label=label, shape="record")
+            if current.operation != Op.NONE:
+                op_id = current_id + str(current.operation)
+                digraph.node(
+                    name=op_id,
+                    label=current.operation.opstr(),
+                )
+                digraph.edge(op_id, current_id)
+                for child in current.children:
+                    digraph.edge(str(id(child)), op_id)
+                    queue.append(child)
+        return digraph
+```
+
+<!-- LEFT OFF: https://youtu.be/VMj-3S1tku0?feature=shared&t=5448 -->

@@ -18,7 +18,7 @@ We consider \((\mathbb{R} \setminus \{-1\}, \star)\), where
 
 Show that \((\mathbb{R} \setminus \{-1\}, \star)\) is an [Abelian group](/notes/mathematics/definitions/abelian_group).
 
-{{<rawhtml>}}<hr style="width: 50%; margin: 0 auto;">{{</rawhtml>}}
+{{<divider>}}
 
 In order to show that \((\mathbb{R} \setminus \{-1\}, \star)\) in an Abelian group, we need to first show that it fulfills the [conditions to be a group](/notes/mathematics/definitions/group#definition).
 
@@ -132,7 +132,7 @@ Because \(\mathbb{R}\) is a [commutative ring](/notes/mathematics/definitions/co
 
 Solve \(3 \star x \star x = 15\) in the Abelian group \((\mathbb{R} \setminus \{-1\}, \star)\).
 
-{{<rawhtml>}}<hr style="width: 50%; margin: 0 auto;">{{</rawhtml>}}
+{{<divider>}}
 
 \[\begin{aligned}
   3 \star x \star x &= 15 \\
@@ -147,7 +147,7 @@ Solve \(3 \star x \star x = 15\) in the Abelian group \((\mathbb{R} \setminus \{
   \fbox{x = \{-3, 1\}}
 \end{aligned}\]
 
-## 2.2
+## 2.2 (in-progress)
 
 {{<rawhtml>}}<div id="congruence-class-definition"></div>{{</rawhtml>}}
 
@@ -174,7 +174,7 @@ For all \(\bar{a}, \bar{b} \in \mathbb{Z}_n\), we define
 
 Show that \((\mathbb{Z}_n, \oplus)\) is a group. Is it Abelian?
 
-{{<rawhtml>}}<hr style="width: 50%; margin: 0 auto;">{{</rawhtml>}}
+{{<divider>}}
 
 In order to show that \((\mathbb{Z}_n, \oplus)\) in an Abelian group, we need to first show that it is a group.
 
@@ -251,7 +251,7 @@ Therefore, the neutral element in \((\mathbb{Z}_n, \oplus)\) is \(\bar{0}\).
 
 > To-Do
 
-## 2.3
+## 2.3 (todo)
 
 > To-Do
 
@@ -262,5 +262,167 @@ Compute the following matrix products, if possible:
 ### 2.4a
 
 \[
-  
+\begin{bmatrix}
+  1 & 2 \\
+  3 & 4 \\
+  7 & 8 
+\end{bmatrix}
+\begin{bmatrix}
+  1 & 1 & 0 \\
+  0 & 1 & 1 \\
+  1 & 0 & 1 \\
+\end{bmatrix}
 \]
+
+{{<divider>}}
+
+Dimensions of matrices are incompatible because the number of columns in the left matrix does not equal the number of rows in the right matrix.
+
+### 2.4b
+
+\[
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+\begin{bmatrix}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+1 & 0 & 1
+\end{bmatrix}
+\]
+
+{{<divider>}}
+
+\[\begin{aligned}
+  (0,0) &= 1 \cdot 1 + 2 \cdot 0 + 3 \cdot 1 = 1 + 0 + 3 = 4 \\
+  (0,1) &= 1 \cdot 1 + 2 \cdot 1 + 3 \cdot 0 = 1 + 2 + 0 = 3 \\
+  (0,2) &= 1 \cdot 0 + 2 \cdot 1 + 3 \cdot 1 = 0 + 2 + 3 = 5 \\
+  \newline
+  (1,0) &= 4 \cdot 1 + 5 \cdot 0 + 6 \cdot 1 = 4 + 0 + 6 = 10 \\
+  (1,1) &= 4 \cdot 1 + 5 \cdot 1 + 6 \cdot 0 = 4 + 5 + 0 = 9  \\
+  (1,2) &= 4 \cdot 0 + 5 \cdot 1 + 6 \cdot 1 = 0 + 5 + 6 = 11 \\
+  \newline
+  (2,0) &= 7 \cdot 1 + 8 \cdot 0 + 9 \cdot 1 = 7 + 0 + 9 = 16 \\
+  (2,1) &= 7 \cdot 1 + 8 \cdot 1 + 9 \cdot 0 = 7 + 8 + 0 = 15 \\
+  (2,2) &= 7 \cdot 0 + 8 \cdot 1 + 9 \cdot 1 = 0 + 8 + 9 = 17
+\end{aligned}\]
+
+\[\begin{bmatrix}
+  4 & 3 & 5 \\
+  10 & 9 & 11 \\
+  16 & 15 & 17
+\end{bmatrix}\]
+
+### 2.4c
+
+\[
+\begin{bmatrix}
+1 & 1 & 0 \\
+0 & 1 & 1 \\
+1 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+\]
+
+{{<divider>}}
+
+\[\begin{aligned}
+  (0,0) &= 1 \cdot 1 + 1 \cdot 4 + 0 \cdot 7 = 1 + 4 + 0 = 5 \\
+  (0,1) &= 1 \cdot 2 + 1 \cdot 5 + 0 \cdot 8 = 2 + 5 + 0 = 7 \\
+  (0,2) &= 1 \cdot 3 + 1 \cdot 6 + 0 \cdot 9 = 3 + 6 + 0 = 9 \\
+  \newline
+  (1,0) &= 0 \cdot 1 + 1 \cdot 4 + 1 \cdot 7 = 0 + 4 + 7 = 11 \\
+  (1,1) &= 0 \cdot 2 + 1 \cdot 5 + 1 \cdot 8 = 0 + 5 + 8 = 13 \\
+  (1,2) &= 0 \cdot 3 + 1 \cdot 6 + 1 \cdot 9 = 0 + 6 + 9 = 15 \\
+  \newline
+  (2,0) &= 1 \cdot 1 + 0 \cdot 4 + 1 \cdot 7 = 1 + 0 + 7 = 8 \\
+  (2,1) &= 1 \cdot 2 + 0 \cdot 5 + 1 \cdot 8 = 2 + 0 + 8 = 10 \\
+  (2,2) &= 1 \cdot 3 + 0 \cdot 6 + 1 \cdot 9 = 3 + 0 + 9 = 12
+\end{aligned}\]
+
+\[\begin{bmatrix}
+5 & 7 & 9 \\
+11 & 13 & 15 \\
+8 & 10 & 12
+\end{bmatrix}\]
+
+### 2.4c
+
+\[
+\begin{bmatrix}
+1 & 2 & 1 & 2 \\
+4 & 1 & -1 & -4
+\end{bmatrix}
+\begin{bmatrix}
+0 & 3 \\
+1 & -1 \\
+2 & 1 \\
+5 & 2
+\end{bmatrix}
+\]
+
+{{<divider>}}
+
+\[\begin{aligned}
+(0,0) &= 1 \cdot 0 + 2 \cdot  1 +  1 \cdot 2 +  2 \cdot 5 = 0 + 2 + 2 + 10 = 14 \\
+(0,1) &= 1 \cdot 3 + 2 \cdot -1 +  1 \cdot 1 +  2 \cdot 2 = 3 - 2 + 1 + 4 = 6 \\
+(1,0) &= 4 \cdot 0 + 1 \cdot  1 + -1 \cdot 2 + -4 \cdot 5 = 0 + 1 - 2 - 20 = -21 \\
+(1,1) &= 4 \cdot 3 + 1 \cdot -1 + -1 \cdot 1 + -4 \cdot 2 = 12 -1 - 1 - 8 = 2
+\end{aligned}\]
+
+\[\begin{bmatrix}
+  14 & 6 \\
+  -21 & 2
+\end{bmatrix}\]
+
+### 2.4e
+
+\[
+\begin{bmatrix}
+0 & 3 \\
+1 & -1 \\
+2 & 1 \\
+5 & 2
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2 & 1 & 2 \\
+4 & 1 & -1 & -4
+\end{bmatrix}
+\]
+
+{{<divider>}}
+
+\[\begin{aligned}
+(0,0) &= 0 \cdot 1 + 3 \cdot 4 = 12 \\
+(0,1) &= 0 \cdot 2 + 3 \cdot 1 = 3 \\
+(0,2) &= 0 \cdot 1 + 3 \cdot -1 = -3 \\
+(0,3) &= 0 \cdot 2 + 3 \cdot -4 = -12 \\
+\newline
+(1,0) &= 1 \cdot 1 - 1 \cdot 4 = -3 \\
+(1,1) &= 1 \cdot 2 - 1 \cdot 1 = 1 \\
+(1,2) &= 1 \cdot 1 - 1 \cdot -1 = 2 \\
+(1,3) &= 1 \cdot 2 - 1 \cdot -4 = 6 \\
+\newline
+(2,0) &= 2 \cdot 1 + 1 \cdot 4 = 6 \\
+(2,1) &= 2 \cdot 2 + 1 \cdot 1 = 5 \\
+(2,2) &= 2 \cdot 1 + 1 \cdot -1 = 1 \\
+(2,3) &= 2 \cdot 2 + 1 \cdot -4 = 0 \\
+\newline
+(3,0) &= 5 \cdot 1 + 2 \cdot 4 = 13 \\
+(3,1) &= 5 \cdot 2 + 2 \cdot 1 = 12 \\
+(3,2) &= 5 \cdot 1 + 2 \cdot -1 = 3 \\
+(3,3) &= 5 \cdot 2 + 2 \cdot -4 = 2
+\end{aligned}\]
+
+\[\begin{bmatrix}
+  12 & 3 & -3 & -12 \\
+  -3 & 1 & 2 & 6 \\
+  6 & 5 & 1 & 0 \\
+  13 & 12 & 3 & 2
+\end{bmatrix}\]
