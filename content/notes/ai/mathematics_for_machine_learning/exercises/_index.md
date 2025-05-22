@@ -7,5 +7,5 @@ layout = 'single'
 +++
 
 {{<rawhtml>}}
-  <script>window.location = "/notes/books/mathematics_for_machine_learning#exercises"</script>
+  <script>window.location = "/notes/ai/mathematics_for_machine_learning#exercises"</script>
 {{</rawhtml>}}

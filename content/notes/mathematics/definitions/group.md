@@ -13,7 +13,7 @@ A **group**  is a set \(G\), together with a binary operator \(\star\), satisfyi
 4. For each \(a \in G\), there exists a \(b \in G\) such that \(a \star b = b \star a = e\) (existence of inverses).
 
 ## Example
-See [this exercise](/notes/books/mathematics_for_machine_learning/exercises/chapter_2_linear_algebra/#21a).
+See [this exercise](/notes/ai/mathematics_for_machine_learning/exercises/chapter_2_linear_algebra/#21a).
 
 ## Source
 <!-- Author(s). Title of Textbook. Edition (if applicable). Publisher, Year. Page(s) used. -->

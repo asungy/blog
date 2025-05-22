@@ -7,14 +7,12 @@ layout = 'single'
 +++
 
 ## AI
-- [Neural Networks: Zero to Hero](./ai/neural_networks_zero_to_hero)
+- [Mathematics for Machine Learning (Deisenroth, Faisal, Ong)](./ai/mathematics_for_machine_learning)
 - [Multivariable Calculus and Complex Analysis](./ai/multivariable_calculus_and_complex_analysis)
+- [Neural Networks: Zero to Hero](./ai/neural_networks_zero_to_hero)
 
 ## Bookmarks
 - {{<ablank href="https://symbl.cc/" text="Unicode search">}}
-
-## Books
-- [Mathematics for Machine Learning (Deisenroth, Faisal, Ong)](./books/mathematics_for_machine_learning)
 
 ## Cheatsheets
 - [MathJax](./cheatsheets/mathjax.md)
