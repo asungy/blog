@@ -8,6 +8,7 @@ layout = 'single'
 
 ## AI
 - [Neural Networks: Zero to Hero](./ai/neural_networks_zero_to_hero)
+- [Multivariable Calculus and Complex Analysis](./ai/multivariable_calculus_and_complex_analysis)
 
 ## Bookmarks
 - {{<ablank href="https://symbl.cc/" text="Unicode search">}}
@@ -23,9 +24,6 @@ layout = 'single'
 - {{<ablank href="https://github.com/asungy/loadout/blob/main/home/config/ghostty/config" text="Ghostty">}}
 - {{<ablank href="https://github.com/asungy/loadout/blob/main/home/config/helix/config.toml" text="Helix">}}
 - {{<ablank href="https://github.com/asungy/loadout/blob/main/home/config/zellij/config.kdl" text="Zellij">}}
-
-## Courses
-- [Multivariable Calculus and Complex Analysis](./courses/01-multivariable_calculus_and_complex_analysis)
 
 ## Keyboard Layouts
 - {{<ablank href="https://configure.zsa.io/moonlander/layouts/z4e5a/latest/0" text="Moonlander">}}

@@ -1,13 +1,23 @@
 +++
 draft = false
-title = 'Exercises'
+title = '02 - Matrix Multiplication'
 readingTime = false
 ToC = true
 layout = 'single'
 math = true
 +++
 
-## Problem 1
+## Topics
+
+- Matrix multiplication
+- Linear transformation
+- Transposition
+
+## Notes
+
+## Exercises
+
+### Problem 1
 
 Let
 

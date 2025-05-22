@@ -1,15 +1,31 @@
 +++
 draft = false
-title = 'Exercises'
+title = '01 - Vectors and Matrices: Addition and Scalar Multiplication'
 readingTime = false
 ToC = true
 layout = 'single'
 math = true
 +++
 
+## Topics
+
+- Vector/Matrix addition
+- Scalar multiplication
+- Vector/Matrix operations laws: 
+  - Commutativity
+  - Associativity
+  - Distributivity
+
+
+## Notes
+
+> The subsection is pretty straightforward so no notes are available.
+
+## Exercises
+
 > TODO: I should verify the answers.
 
-## Problem 1
+### Problem 1
 
 Let
 
@@ -96,7 +112,7 @@ Let
 
 - \(3\mathbf{A} + 0.5\mathbf{B} + \mathbf{C}\) is undefined because \(3\mathbf{A} + 0.5\mathbf{B}\) and \(\mathbf{C}\) do not have the same dimensions.
 
-## Problem 2
+### Problem 2
 
 Let
 
@@ -212,7 +228,7 @@ Let
 
 - \(0.6\mathbf{C} - 0.6\mathbf{D} = 0.6(\mathbf{C} - \mathbf{D})\) via the distributive rule.
 
-## Problem 3
+### Problem 3
 
 Let
 
@@ -333,7 +349,7 @@ Let
 
 - \(0\mathbf{E}\) does not have same dimensions as \(\mathbf{u}\) and \(\mathbf{v}\) so matrix addition cannot be applied here.
 
-## Problem 4
+### Problem 4
 
 Let 
 
@@ -393,7 +409,7 @@ Let's say these vectors represent forces in space. If we combine or sum these ve
 \end{bmatrix}
 \]
 
-## Problem 5
+### Problem 5
 
 Forces are said to be in _equilibrium_ if their resultant is a zero vector. What opposing vector force would cause the resultant force found in [17](#17) to be in equilibrium?
 
