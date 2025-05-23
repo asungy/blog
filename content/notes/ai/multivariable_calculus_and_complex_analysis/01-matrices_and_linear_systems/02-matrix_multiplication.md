@@ -357,3 +357,43 @@ def bacteria_markov_process(starting_population, iterations):
 
 print(bacteria_markov_process(1e9, 1))
 ```
+#### Problem 5
+
+Two grocery stores \(S_1\) and \(S_2\) sell apples, oranges, and bananas with a profit of $3.50, $6.20, and $3.00, respectively. Let the sales in a certain week be given by the matrix
+
+\[
+\left[\begin{array}{ccc|c}
+\text{apples} & \text{oranges} & \text{bananas} & \\
+\hline
+40 & 6 & 24 & S_1 \\
+10 & 12 & 50 & S_2
+\end{array}\right]
+\]
+
+Find a vector that represents the total profits of \(S_1\) and \(S_2\).
+
+{{<divider>}}
+
+\[
+\begin{bmatrix}
+  40 & 6 & 24 \\
+  10 & 12 & 50 
+\end{bmatrix}
+\begin{bmatrix}
+  3.5 \\
+  6.2 \\
+  3.0
+\end{bmatrix} =
+\begin{bmatrix}
+  40 \cdot 3.5 + 6 \cdot 6.2 + 24 \cdot 3.0 \\
+  10 \cdot 3.5 + 12 \cdot 6.2 \cdot 50 + 3.0
+\end{bmatrix} =
+\begin{bmatrix}
+  140 + 37.2 + 72 \\
+  35 + 74.4 + 150
+\end{bmatrix} =
+\begin{bmatrix}
+  249.2 \\
+  259.4
+\end{bmatrix}
+\]
