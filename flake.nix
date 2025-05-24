@@ -32,6 +32,7 @@
             alias activate='source ./venv/bin/activate'
             alias hugo-serve='hugo build && pagefind --site public && hugo server --disableFastRender'
             alias install='pip install -r requirements.txt'
+            alias clean='rm -fr public/'
             alias jupyter-serve='jupyter lab --notebook-dir=notebooks'
             alias nb-to-html='jupyter nbconvert --to html'
 
