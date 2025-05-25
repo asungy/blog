@@ -2,7 +2,7 @@
 draft = false
 title = 'Notes'
 readingTime = false
-ToC = true
+ToC = false
 layout = 'single'
 +++
 
