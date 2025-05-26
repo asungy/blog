@@ -11,8 +11,16 @@ math = true
 
 - Linear system of equations
 - Gauss elimination
+- Determined, underdetermined and overdetermined linear systems
+- Consistent and inconsistent linear systems
 
 ## Notes
+- A linear system is _overdetermined_ if it has more equations than unknowns.
+- A linear system is _underdetermined_ if it has fewer equations than unknowns.
+- A linear system is _determined_ if the number of equations equals the number of unknown variables.
+- A linear system is _consistent_ if it has at least one solution.
+- A linear system is _inconsistent_ if it has no solutions at all.
+
 
 ## Exercises
 
