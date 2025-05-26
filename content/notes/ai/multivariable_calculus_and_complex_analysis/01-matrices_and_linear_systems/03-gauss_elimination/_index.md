@@ -264,3 +264,174 @@ From this matrix, we can get
 ### Problem 4
 
 > Skipping
+
+## Additional Exercises
+
+### Problem 1
+
+Turn the following matrix into row-echelon form:
+
+\[\left[\begin{array}{cccc|c}
+  2 & 3 & 1 & -11 & 1 \\
+  5 & -2 & 5 & -4 & 5 \\
+  1 & -1 & 3 & -3 & 3 \\
+  3 & 4 & -7 & 2 & -7
+\end{array}\right]\]
+
+{{<divider>}}
+
+\[\begin{aligned}
+\left[\begin{array}{cccc|c}
+  2 & 3 & 1 & -11 & 1 \\
+  5 & -2 & 5 & -4 & 5 \\
+  1 & -1 & 3 & -3 & 3 \\
+  3 & 4 & -7 & 2 & -7
+\end{array}\right]
+&\quad \xrightarrow{\text{Swap R0 and R2}}
+\left[\begin{array}{cccc|c}
+  1 & -1 & 3 & -3 & 3 \\
+  5 & -2 & 5 & -4 & 5 \\
+  2 & 3 & 1 & -11 & 1 \\
+  3 & 4 & -7 & 2 & -7
+\end{array}\right] \\
+\left[\begin{array}{cccc|c}
+  1 & -1 & 3 & -3 & 3 \\
+  5 & -2 & 5 & -4 & 5 \\
+  2 & 3 & 1 & -11 & 1 \\
+  3 & 4 & -7 & 2 & -7
+\end{array}\right]
+&\quad \xrightarrow{R_1 \text{-=} 5R_0}
+\left[\begin{array}{cccc|c}
+  1      & -1      & 3      & -3      & 3 \\
+  (5-5*1) & (-2-5*-1) & (5-5*3) & (-4-5*-3) & (5-5*3) \\
+  2      & 3       & 1      & -11     & 1 \\
+  3      & 4       & -7     & 2       & -7
+\end{array}\right] \\
+&\quad \xrightarrow{}
+\left[\begin{array}{cccc|c}
+1  & -1  & 3    & -3   & 3\\
+0  & 3   & -10  & 11   & -10\\
+2  & 3   & 1    & -11  & 1\\
+3  & 4   & -7   & 2    & -7
+\end{array}\right] \\
+\left[\begin{array}{cccc|c}
+1  & -1  & 3    & -3   & 3\\
+0  & 3   & -10  & 11   & -10\\
+2  & 3   & 1    & -11  & 1\\
+3  & 4   & -7   & 2    & -7
+\end{array}\right]
+&\quad \xrightarrow{R_2 \text{-=} 2R_0}
+\left[\begin{array}{cccc|c}
+1  & -1  & 3    & -3   & 3\\
+0  & 3   & -10  & 11   & -10\\
+(2-2*1)  & (3-2*-1)   & (1-2*3)    & (-11-2*-3)  & (1-2*3)\\
+3  & 4   & -7   & 2    & -7
+\end{array}\right] \\
+&\quad \xrightarrow{}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 3  & -10 & 11 & -10\\
+0 & 5  & -5  & -5 & -5\\
+3 & 4  & -7  & 2  & -7
+\end{array}\right] \\
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 3  & -10 & 11 & -10\\
+0 & 5  & -5  & -5 & -5\\
+3 & 4  & -7  & 2  & -7
+\end{array}\right]
+&\quad \xrightarrow{R_2 \text{-=} 3R_0}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 3  & -10 & 11 & -10\\
+0 & 5  & -5  & -5 & -5\\
+(3-3*1) & (4-3*-1)  & (-7-3*3)  & (2-3*-3)  & (-7-3*3)
+\end{array}\right] \\
+&\quad \xrightarrow{}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 3  & -10 & 11 & -10\\
+0 & 5  & -5  & -5 & -5\\
+0 & 7  & -16 & 11 & -16
+\end{array}\right] \\
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 3  & -10 & 11 & -10\\
+0 & 5  & -5  & -5 & -5\\
+0 & 7  & -16 & 11 & -16
+\end{array}\right]
+&\quad \xrightarrow{R_1 \text{/=} 5}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 3  & -10 & 11 & -10\\
+0 & 1  & -1  & -1 & -1\\
+0 & 7  & -16 & 11 & -16
+\end{array}\right]
+\quad \xrightarrow{\text{Swap R1 and R2}}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 1  & -1  & -1 & -1\\
+0 & 3  & -10 & 11 & -10\\
+0 & 7  & -16 & 11 & -16
+\end{array}\right] \\
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 1  & -1  & -1 & -1\\
+0 & 3  & -10 & 11 & -10\\
+0 & 7  & -16 & 11 & -16
+\end{array}\right]
+&\quad \xrightarrow{R_3 \text{-=} 7R_1}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 1  & -1  & -1 & -1\\
+0 & 3  & -10 & 11 & -10\\
+(0-7*0) & (7-7*1)  & (-16-7*-1) & (11-7*-1) & (-16-7*-1)
+\end{array}\right] \\
+&\quad \xrightarrow{}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 1  & -1  & -1 & -1\\
+0 & 3  & -10 & 11 & -10\\
+0 & 0  & -9 & 18 & -9
+\end{array}\right] \\
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 1  & -1  & -1 & -1\\
+0 & 3  & -10 & 11 & -10\\
+0 & 0  & -9 & 18 & -9
+\end{array}\right]
+&\quad \xrightarrow{R_2 \text{-=} 3R_1}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 1  & -1  & -1 & -1\\
+(0-3*0) & (3-3*1)  & (-10-3*-1) & (11-3*-1) & (-10-3*-1)\\
+0 & 0  & -9 & 18 & -9
+\end{array}\right] \\
+&\quad \xrightarrow{}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 1  & -1  & -1 & -1\\
+0 & 0  & -7 & 14 & -7\\
+0 & 0  & -9 & 18 & -9
+\end{array}\right] \\
+\left[\begin{array}{cccc|c}
+1 & -1 & 3   & -3 & 3\\
+0 & 1  & -1  & -1 & -1\\
+0 & 0  & -7 & 14 & -7\\
+0 & 0  & -9 & 18 & -9
+\end{array}\right]
+&\quad \xrightarrow{R_2 \text{/=} -7 \quad R_3 \text{/=} -9}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3  & -3 & 3\\
+0 & 1  & -1 & -1 & -1\\
+0 & 0  & 1  & -2 & 1\\
+0 & 0  & 1  & -2 & 1
+\end{array}\right]
+\quad \xrightarrow{R_3 \text{-=} R_2}
+\left[\begin{array}{cccc|c}
+1 & -1 & 3  & -3 & 3\\
+0 & 1  & -1 & -1 & -1\\
+0 & 0  & 1  & -2 & 1\\
+0 & 0  & 0  & 0 & 0
+\end{array}\right]
+\end{aligned}\]
