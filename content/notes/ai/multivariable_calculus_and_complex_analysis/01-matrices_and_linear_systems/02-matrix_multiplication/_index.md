@@ -340,7 +340,7 @@ Solve for
 
 {{<divider>}}
 
-> Skipping due to lack of time. Maybe I'll come back and do it but probably not.
+> Skipping
 
 #### Problem 4
 

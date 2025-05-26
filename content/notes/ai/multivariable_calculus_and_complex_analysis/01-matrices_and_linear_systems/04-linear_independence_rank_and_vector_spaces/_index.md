@@ -1,6 +1,6 @@
 +++
 draft = false
-title = '04 - Linear Indepedence, Rank, and Vector Spaces'
+title = '04 - Linear Independence, Rank, and Vector Spaces'
 readingTime = false
 ToC = true
 layout = 'single'

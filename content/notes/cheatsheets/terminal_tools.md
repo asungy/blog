@@ -7,7 +7,7 @@ ToC = true
 
 > Just some notes on tools I frequently use in the terminal.
 
-## FFMPEG
+## ffmpeg
 
 ### Converting MKV to MP4
 
@@ -17,7 +17,7 @@ Sometimes I take screen recordings and post them on GitLab for my team to refere
 ffmpeg -i input.mkv -c:v libx264 -c:a aac output.mp4
 ```
 
-## Git
+## git
 
 ### Displaying last touched branches
 
@@ -42,6 +42,14 @@ for branch in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
 done
 ```
 
+## helix
+
+Modal text editor.
+
+### How to align selections
+
+- Select items and then hit `&`.
+
 ## tr
 
 ### Converting text to lowercase
@@ -50,7 +58,9 @@ done
 echo "YOUR STRING" | tr '[:upper:]' '[:lower:]'
 ```
 
-## Zellij
+## zellij
+
+Terminal multiplexer.
 
 ### Horizontal split on a pane
 
