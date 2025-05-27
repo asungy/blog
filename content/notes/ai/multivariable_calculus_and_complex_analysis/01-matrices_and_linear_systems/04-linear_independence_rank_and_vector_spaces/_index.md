@@ -17,6 +17,8 @@ math = true
 ## Notes
 - **Definition of Linear Independence** - Let us consider the vector space \(V\) with \(k \in \mathbb{N}\) and \(\mathbf{x}_1, \dots, \mathbf{x}_k \in V\). If there is a non-trivial linear combination, such that \(\mathbf{0} = \sum_{i=1}^{k} \lambda_i \mathbf{x}_i\) with at least one \(\lambda_i \neq 0\), the vectors \(\mathbf{x}_1, \dots, \mathbf{x}_k\) are _linearly dependent_. If only the trivial solution exists, then the vectors are _linearly independent_.
 - **Definition of Rank** - The _rank_ of a matrix is the maximum number of linearly independent rows.
+- A matrix is said to be _rank deficient_ if it does not have a full rank.
+- A matrix is considered to be _full rank_ if its rank is equal to the smallest dimension of the matrix, meaning it has the maximum number of linearly independent rows or columns. 
 
 ## Exercises
 

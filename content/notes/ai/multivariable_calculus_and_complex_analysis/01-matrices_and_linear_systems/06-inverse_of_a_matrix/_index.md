@@ -22,6 +22,7 @@ math = true
   - If \(\mathbf{A}\) has an inverse, the inverse is unique.
 - If \(\mathbf{A}\) has no inverse, then \(\mathbf{A}\) is called a _singular matrix_.
 - The inverse of an \(n \times n\) matrix exists if and only if its rank equals \(n\).
+- A square matrix is invertible if and only if its columns (or rows) are linearly independent.
 
 ## Exercises
 

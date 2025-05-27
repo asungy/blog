@@ -21,7 +21,6 @@ math = true
 - A linear system is _consistent_ if it has at least one solution.
 - A linear system is _inconsistent_ if it has no solutions at all.
 
-
 ## Exercises
 
 ### Problem 1
@@ -434,4 +433,102 @@ Turn the following matrix into row-echelon form:
 0 & 0  & 1  & -2 & 1\\
 0 & 0  & 0  & 0 & 0
 \end{array}\right]
+\end{aligned}\]
+
+### Problem 2
+
+Turn the following into row-echelon form:
+
+\[
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+2 & 3 & 4 & 5 \\
+3 & 4 & 5 & 6 \\
+4 & 5 & 6 & 7
+\end{bmatrix}
+\]
+
+{{<divider>}}
+
+\[\begin{aligned}
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+2 & 3 & 4 & 5 \\
+3 & 4 & 5 & 6 \\
+4 & 5 & 6 & 7
+\end{bmatrix}
+&\quad \xrightarrow{R_1 \text{-=} 2R_0}
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+(2-2*1) & (3-2*2) & (4-2*3) & (5-2*4) \\
+3 & 4 & 5 & 6 \\
+4 & 5 & 6 & 7
+\end{bmatrix}
+\quad \xrightarrow{}
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+3 & 4 & 5 & 6 \\
+4 & 5 & 6 & 7
+\end{bmatrix} \\
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+3 & 4 & 5 & 6 \\
+4 & 5 & 6 & 7
+\end{bmatrix} 
+&\quad \xrightarrow{R_2 \text{-=} 3R_0}
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+(3-3*1) & (4-3*2) & (5-3*3) & (6-3*4) \\
+4 & 5 & 6 & 7
+\end{bmatrix} 
+\quad \xrightarrow{}
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & -2 & -4 & -6 \\
+4 & 5 & 6 & 7
+\end{bmatrix} \\
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & -2 & -4 & -6 \\
+4 & 5 & 6 & 7
+\end{bmatrix} 
+&\quad \xrightarrow{R_3 \text{-=} 4R_0}
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & -2 & -4 & -6 \\
+(4-4*1) & (5-4*2) & (6-4*3) & (7-4*4)
+\end{bmatrix} 
+\quad \xrightarrow{}
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & -2 & -4 & -6 \\
+0 & -3 & -6 & -9
+\end{bmatrix} \\
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & -2 & -4 & -6 \\
+0 & -3 & -6 & -9
+\end{bmatrix} 
+&\quad \xrightarrow{\text{simplify R1, R2, R3}}
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & -1 & -2 & -3 \\
+0 & -1 & -2 & -3 \\
+0 & -1 & -2 & -3
+\end{bmatrix} 
+\quad \xrightarrow{}
+\begin{bmatrix}
+1 & 2  & 3  & 4 \\
+0 & -1 & -2 & -3 \\
+0 & 0  & 0  & 0 \\
+0 & 0  & 0  & 0
+\end{bmatrix} 
 \end{aligned}\]
