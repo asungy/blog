@@ -8,11 +8,11 @@ readingTime = true
 hideComments = false
 ToC = false
 math = false
-+++
 
-{{<rawhtml>}}
-<script src="./lib.js"></script>
-{{</rawhtml>}}
+[build]
+list = 'never'
+render = 'never'
++++
 
 ## Notes
 - [Video explaining rotational matrices](https://www.youtube.com/watch?v=Ta8cKqltPfU)
@@ -25,6 +25,13 @@ I wanted to spend some time getting WebGL setup and playing with some matrices i
 
 {{<rawhtml>}}
 <canvas id="gl-canvas" style="width: 100%; height: 50%; margin-top: 10px;"></canvas>
-<script src="./01-demo.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+  integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+  crossorigin="anonymous"
+  defer
+  async
+></script>
+<script type="module" src="./01-demo.js"></script>
 {{</rawhtml>}}
 
