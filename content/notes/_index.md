@@ -7,8 +7,6 @@ layout = 'single'
 +++
 
 ## AI
-- [Mathematics for Machine Learning (Deisenroth, Faisal, Ong)](./ai/mathematics_for_machine_learning)
-- [Multivariable Calculus and Complex Analysis](./ai/multivariable_calculus_and_complex_analysis)
 - [Neural Networks: Zero to Hero](./ai/neural_networks_zero_to_hero)
 
 ## Cheatsheets
@@ -17,3 +15,5 @@ layout = 'single'
 
 ## Mathematics
 - [Definitions](./mathematics/definitions)
+- [Mathematics for Machine Learning (Deisenroth, Faisal, Ong)](./mathematics/mathematics_for_machine_learning)
+- [Multivariable Calculus and Complex Analysis](./mathematics/multivariable_calculus_and_complex_analysis)
