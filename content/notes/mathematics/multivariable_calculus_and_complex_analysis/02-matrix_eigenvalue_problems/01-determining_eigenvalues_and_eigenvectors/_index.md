@@ -362,7 +362,7 @@ Let's try \(\lambda=9\).
 
 Wow, that was a lucky guess.
 
-So we know that \(\lambda=9\) and now we need to do long division of the polynomial:
+So we know that \(\lambda=9\) and now we need to do long division of the polynomial to find the other roots:
 
 \[
 \frac{-\lambda^3+27\lambda^2-243\lambda+729}{\lambda-9}
@@ -396,7 +396,88 @@ Then we multiply \(18\lambda\) to \(\lambda-9\) and get \(18\lambda^2-162\lambda
 Now we divide the first term of \(-81\lambda+729\) by the first term of \(\lambda-9\) and get:
 
 \[
-  -81\lambda
+  \frac{-81\lambda}{\lambda} = -81
 \]
 
-<!-- LEFT OFF -->
+Then we multiply \(-81\) to \(\lambda-9\) and get \(-81\lambda+729\). If we subtract this from our last expression \(-81\lambda+729\), we get \(0\). We have performed long division on our polynomial and there is no remainder.
+
+Now we need to collect all of the terms and add the together so that we get:
+
+\[
+-\lambda^3+27\lambda^2-243\lambda+729 = (\lambda-9)(-\lambda^2+18\lambda-81) = (\lambda-9)^3
+\]
+
+It looks like \(\lambda=9\) is our eigenvalue for this matrix. Now we need to find its corresponding eigenvector.
+
+\[\begin{aligned}
+\begin{bmatrix}
+  13-9 & 5 & 2 \\
+  2  & 7-9 & -8 \\
+  5  & 4 & 7-9 \\
+\end{bmatrix}
+&\xrightarrow{}
+\begin{bmatrix}
+  4  & 5  & 2 \\
+  2  & -2 & -8 \\
+  5  & 4  & -2 \\
+\end{bmatrix} \\
+&\xrightarrow{}
+\begin{bmatrix}
+  1  & -1 & -4 \\
+  4  & 5  & 2 \\
+  5  & 4  & -2 \\
+\end{bmatrix} \\
+&\xrightarrow{R_1 \text{-=} 4R_0}
+\begin{bmatrix}
+  1  & -1 & -4 \\
+  4-4  & 5-(-4)  & 2-(-16) \\
+  5  & 4  & -2 \\
+\end{bmatrix}
+\xrightarrow{}
+\begin{bmatrix}
+  1  & -1 & -4 \\
+  0  & 9  & 18 \\
+  5  & 4  & -2 \\
+\end{bmatrix} \\
+&\xrightarrow{}
+\begin{bmatrix}
+  1  & -1 & -4 \\
+  0  & 1  & 2 \\
+  5  & 4  & -2 \\
+\end{bmatrix} \\
+&\xrightarrow{R_2 \text{-=} 5R_0}
+\begin{bmatrix}
+  1  & -1 & -4 \\
+  0  & 1  & 2 \\
+  5-5  & 4-(-5)  & -2-(-20) \\
+\end{bmatrix}
+\xrightarrow{}
+\begin{bmatrix}
+  1  & -1 & -4 \\
+  0  & 1  & 2 \\
+  0  & 9  & 18 \\
+\end{bmatrix} \\
+&\xrightarrow{}
+\begin{bmatrix}
+  1  & -1 & -4 \\
+  0  & 1  & 2 \\
+  0  & 1  & 2 \\
+\end{bmatrix}
+\xrightarrow{}
+\begin{bmatrix}
+  1  & -1 & -4 \\
+  0  & 1  & 2 \\
+  0  & 0  & 0 \\
+\end{bmatrix} \\
+\end{aligned}\]
+
+This gives us the follow system of linear equations:
+
+\[\begin{aligned}
+  x_1 - x_2 -4x_3 &= 0 \\
+  x_2 + 2x_3 &= 0
+\end{aligned}\]
+
+If we choose \(x_3=1\), then \(x_2=-2\) and \(x_1=2\).
+
+So the eigenvalue for this matrix is \(\lambda=9\) and the corresponding eigenvector is \(\begin{bmatrix}2 & -2 & 1\end{bmatrix}^{\top}\). We also note that this eigenvalue came from a 3rd degree characteristic polynomial but we only have 1 eigenvector, so this matrix has a _defect_ of 2. This means that this matrix does not have a complete basis of eigenvectors and therefore is not _diagonalizable_.
