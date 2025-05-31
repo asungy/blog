@@ -33,4 +33,16 @@ Each transition has been assigned the probability of occurring based on the prob
 
 Based on theorem 3 in chapter 8.1 from our readings, we know that a matrix and its transpose have the same eigenvalues. Because each of this matrix's columns sum to 1, we know that it has an eigenvalue of 1.
 
-But let's be thorough and make sure we have a defective matrix of 2, that is, a matrix with a triple eigenvalue, but one distinct eigenvector. We can expect this to be the case because people in the population aren't disappearing or reproducing.
+<!-- TODO: Show this. -->
+
+But what is the significance of this eigenvalue and why can we expect this matrix to have only one eigenvalue and one distinct eigenvector?
+
+If we imagine our vector space as a 3D space where vectors can describe any combination of healthy, sick, and dead populations then we can think of the eigenvalue as helping us create a transformation matrix to collapse that 3D vector space into some 2D space (or a line). Now, there exists a vector in the 3D vector space that when this collapse happens from 3D to 2D space, this vector already exists in that 2D dimensional space (i.e. during the transformation it maintains the same direction). Actually, because the eigenvalue of this matrix is 1, this vector doesn't change at all. This is vector is called the eigenvector.
+
+But what is this eigenvector telling us? It's saying there is some combination of healthy, sick, and dead people where our stochastic matrix won't have any affect when it is multiplied by this eigenvector. This represents a state of stability in our system.
+
+---
+
+<!-- TODO: Actually try to solve for the eigenvector and prove this point. -->
+
+But let's be thorough and make sure we have a defective matrix of 2, that is, a matrix with a triple eigenvalue, but one distinct eigenvector. We can expect this to be the case because people in the population aren't disappearing or reproducing and thus the population vector is not expected to scale in any way.
