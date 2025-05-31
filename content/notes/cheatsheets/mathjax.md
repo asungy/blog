@@ -6,8 +6,6 @@ math = true
 ToC = true
 +++
 
-<!-- For formatting: http://markdowntable.com/ -->
-
 ## Arrows
 | Symbol                  | Code                  | Description                     |
 |-------------------------|-----------------------|---------------------------------|

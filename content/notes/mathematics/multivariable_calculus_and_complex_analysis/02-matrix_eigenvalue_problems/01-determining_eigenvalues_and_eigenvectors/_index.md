@@ -9,6 +9,45 @@ math = true
 
 ## Notes
 
+### The Rational Root Theorem
+
+While not explicitly covered in this subject, there are situations where we need to find the roots to a polynomial with more than 2 degrees. The _Rational Root Theorem_ is a tool used in algebra to help find possible rational roots of a polynomial _with integer coefficients_.
+
+#### Theorem
+
+The Rational Root Theorem states:
+
+
+{{<divider width="90%">}}
+If a polynomial
+ 
+ \[
+  P(x) = a_{n}x^n + a_{n-1}x^{n-1}+ \cdots + a_{1}x + a_{0}
+\]
+has a rational root \(\frac{p}{q}\) in lowest terms, then:
+- \(p\) is a factor of the constant term \(a_0\) (the last term)
+- \(q\) is a factor of the leading coefficient \(a_n\) (the first term)
+
+{{<divider width="90%">}}
+
+#### Example
+
+Suppose you have this polynomial:
+
+\[
+  P(x) = 2x^3 -3x^2 - 8x + 3
+\]
+
+- The constant term \(a_0 = 3\), so the factors are \(\pm 1, \pm 3\).
+- The leading coefficient \(a_n = 2\), so the factors are \(\pm 1, \pm 2\).
+
+So the possible roots are:
+\[
+  \pm 1,\: \pm 3,\: \pm\frac{1}{2},\: \pm\frac{3}{2}
+\]
+
+You would then try to plug these in and see which ones (if any) are actual roots.
+
 ### Cramer's rule and finding eigenvalues
 
 [Cramer's rule](https://en.wikipedia.org/wiki/Cramer%27s_rule) solves a linear system of the form:
@@ -283,8 +322,81 @@ Find the eigenvalues and corresponding eigenvectors for the following matrix:
   \end{vmatrix} = 0
 \end{aligned}\]
 
+\[(13 - \lambda)((7-\lambda)^2+32)-5(2(7-\lambda)+40)+2(2 \cdot 4-5 \cdot(7-\lambda)) = 0\]
+\[(13 - \lambda)(\lambda^2-14\lambda+49+32)-5(14-2\lambda+40)+2(8-(35-5\lambda)) = 0\]
+\[(-\lambda+13)(\lambda^2-14\lambda+81)-(70-10\lambda+200)+2(8-35+5\lambda) = 0\]
+\[(-\lambda(\lambda^2-14\lambda+81)+13(\lambda^2-14\lambda+81))-(-10\lambda+270)+2(-27+5\lambda) = 0\]
+\[((-\lambda^3+14\lambda^2-81\lambda)+(13\lambda^2-182\lambda+1053))+(10\lambda-270)+(-54+10\lambda) = 0\]
+
+| 3rd degree terms | 2nd degree terms                 | 1st degree terms                                              | constants                   |
+|------------------|----------------------------------|---------------------------------------------------------------|-----------------------------|
+| \(-\lambda^3\)   | \(14\lambda^2\), \(13\lambda^2\) | \(-81\lambda\), \(-182\lambda\), \(10\lambda\), \(10\lambda\) | \(1053\), \(-270\), \(-54\) |
+
+\[-\lambda^3+27\lambda^2-243\lambda+729 = 0\]
+
+We can use the [Rational Root Theorem](#the-rational-root-theorem) and find the possible roots to this polynomial.
+
+Since the constant term \(729 = 3^6\), the positive divisors are:
+
 \[
-  (13 - \lambda)((7-\lambda)^2+32)-5(2(7-\lambda)+40)+2(2 \cdot 4-5 \cdot(7-\lambda)) = 0
+  1,\:3,\:9,\:27,\:81,\:243,\:729
 \]
 
-> TODO: Finish it
+and thus the possible factors are:
+
+\[
+  \pm 1,\:\pm 3,\:\pm 9,\:\pm 27,\:\pm 81,\:\pm 243,\:\pm 729
+\]
+
+> I'm going to make a really lucky guess and see if \(9\) works as a possible root.
+
+Let's try \(\lambda=9\).
+
+\[\begin{aligned}
+-\lambda^3+27\lambda^2-243\lambda+729 &= 0 \\
+-(9)^3+27(9)^2-243(9)+729 &= 0 \\
+-(729)+27\cdot81-2187+729 &= 0 \\
+-(729)+2187-2187+729 &= 0 \\
+0 &= 0
+\end{aligned}\]
+
+Wow, that was a lucky guess.
+
+So we know that \(\lambda=9\) and now we need to do long division of the polynomial:
+
+\[
+\frac{-\lambda^3+27\lambda^2-243\lambda+729}{\lambda-9}
+\]
+
+First we need to divide the leading terms of \(-\lambda^3+27\lambda^2-243\lambda+729\) and \(\lambda-9\):
+\[
+  \frac{-\lambda^{3}}{\lambda} = -\lambda^2
+\]
+
+So the first term is \(-\lambda^2\). Next we need to multiply this term by \(\lambda-9\) and then subtract it from the original polynomial:
+
+\[-\lambda^3+27\lambda^2-243\lambda+729 - (-\lambda^2 \cdot (\lambda-9))\]
+\[-\lambda^3+27\lambda^2-243\lambda+729 - (-\lambda^3+9\lambda^2)\]
+\[-\lambda^3+27\lambda^2-243\lambda+729 + \lambda^3-9\lambda^2\]
+\[27\lambda^2+(-9\lambda^2)-243\lambda+729\]
+\[18\lambda^2-243\lambda+729\]
+
+Now, let's take the first term of \(18\lambda^2-243\lambda+729\) and divide it by the first term of \(\lambda-9\).
+
+\[
+  \frac{18\lambda^2}{\lambda} = 18\lambda
+\]
+
+Then we multiply \(18\lambda\) to \(\lambda-9\) and get \(18\lambda^2-162\lambda\). Now subtract \(18\lambda^2-162\lambda\) from \(18\lambda^2-243\lambda+729\):
+
+\[18\lambda^2-243\lambda+729 - (18\lambda^2-162\lambda)\]
+\[-243\lambda+729 + 162\lambda\]
+\[-81\lambda+729\]
+
+Now we divide the first term of \(-81\lambda+729\) by the first term of \(\lambda-9\) and get:
+
+\[
+  -81\lambda
+\]
+
+<!-- LEFT OFF -->

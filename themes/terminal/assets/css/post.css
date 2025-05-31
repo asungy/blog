@@ -6,7 +6,7 @@ blockquote {
   color: var(--comment);
 }
 
-blockquote > mjx-container, blockquote > p > mjx-container {
+blockquote > mjx-container, blockquote > p > mjx-container, blockquote > ul > li >mjx-container {
   color: var(--green2);
 }
 
