@@ -1,17 +1,11 @@
 +++
-draft = false
-title = '02 - Applications of Eigenvalue Problems'
+draft = true
+title = 'Eigenvalues and stochastic matrices'
 readingTime = false
 ToC = true
 layout = 'single'
 math = true
 +++
-
-## Notes
-
-## Exercises
-
-### Problem 1
 
 There are initially 200 healthy people and they can either be healthy, sick, or dead. Due to a spread of contagion, each year, there's a 60% chance that a healthy individual gets sick and a 10% chance that a healthy person dies. Each year 60% of sick people die while 20% go from sick to healthy. How many years will it take for only 10% of the population to be alive? How many people are healthy, sick, and dead after _k_ years?
 
