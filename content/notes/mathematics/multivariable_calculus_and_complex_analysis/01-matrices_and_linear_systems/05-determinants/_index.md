@@ -7,10 +7,6 @@ layout = 'single'
 math = true
 +++
 
-## Topics 
-
-- Determinants
-
 ## Notes
 - Some properties and behaviors on determinants:
   - Interchange of two rows multiplies the value of the determinant by -1.

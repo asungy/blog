@@ -7,11 +7,6 @@ layout = 'single'
 math = true
 +++
 
-## Topics
-- Matrix inversion
-- Singular and non-singular matrices
-- Gauss-Jordan Elimination
-
 ## Notes
 - The inverse of an \(n \times n\) matrix is denoted by
 \[

@@ -7,19 +7,26 @@ layout = 'single'
 math = true
 +++
 
-## Topics
-
-- Linear system of equations
-- Gauss elimination
-- Determined, underdetermined and overdetermined linear systems
-- Consistent and inconsistent linear systems
-
 ## Notes
+
+### Determined
 - A linear system is _overdetermined_ if it has more equations than unknowns.
 - A linear system is _underdetermined_ if it has fewer equations than unknowns.
 - A linear system is _determined_ if the number of equations equals the number of unknown variables.
+
+### Consistent vs Inconsistent
 - A linear system is _consistent_ if it has at least one solution.
 - A linear system is _inconsistent_ if it has no solutions at all.
+
+### Homogeneous vs Non-homogeneous
+Consider the following system:
+
+\[
+  \mathbf{A}\mathbf{x} = \mathbf{b}
+\]
+
+- A _homogeneous system_ is a linear system where \(\mathbf{b} = \mathbf{0}\)
+- A _non-homogeneous system_ is a linear system where \(\mathbf{b}\) has at least one non-zero value.
 
 ## Exercises
 
