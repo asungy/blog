@@ -254,3 +254,46 @@ Year: 6 - [  5.3322   7.998  186.6698]
 ```
 
 So after about 5-6 years, only 20% of the population remains alive.
+
+> I don't know how to make this calculation without a brute force approach, but I know there's a way.
+
+### Problem 2
+
+Given \(\mathbf{A}\) in a deformation \(\mathbf{y} = \mathbf{A} \mathbf{x}\), find the principal directions and corresponding factors of extension/contraction.
+
+\[
+  \mathbf{A} = \begin{bmatrix}
+    3.0 & 1.5 \\
+    1.5 & 3.0
+  \end{bmatrix}
+\]
+
+{{<divider>}}
+
+According to Wolfram Alpha, the eigenvalues of \(\mathbf{A}\) are \(\lambda = \{\frac{9}{2}, \frac{3}{2}\}\). These eigenvalues are the factors of extension.
+
+Now we need to find the principal directions or with direction the deformation occurs. To do this, we need to calculate the corresponding eigenvectors of the factors of extension.
+
+If we let \(\lambda = \frac{9}{2}\).
+
+\[
+  \mathbf{A} = \begin{bmatrix}
+    3.0-\frac{9}{2} & 1.5 \\
+    1.5 & 3.0-\frac{9}{2}
+  \end{bmatrix}
+\]
+
+After row-reducing this becomes
+
+\[
+  \begin{bmatrix}
+    1 & -1 \\
+    0 & 0
+  \end{bmatrix}
+\]
+
+So if we let \(x_1=1\) then \(x_2=1\), so a corresponding eigenvector is \(\begin{bmatrix}1 & 1\end{bmatrix}^{\top}\).
+
+We can tell by looking at it, the angle it forms with the x-axis is 45°.
+
+And we would do the same thing for \(\lambda = \frac{3}{2}\) where we would find an eigenvector of \(\begin{bmatrix}-1 & 1\end{bmatrix}^{\top}\) with an angle of 135°. This tells us, the deformation extends along the 45° and 135° line, but the extenion is greater along the 45° line.
