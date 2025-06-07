@@ -72,6 +72,10 @@ If \(\text{det}(\mathbf{A}) \neq 0\), then only the trivial solution exists beca
 
 However, if \(\text{det}(\mathbf{A}) = 0\), then we _might_ have infinitely many solutions **in which a non-trivial solution exists**. In conclusion, if \(\text{det}(\mathbf{A})=0\), Cramer's rule fails and that's when non-trivial solutions become possible in homogeneous systems.
 
+### Misc
+
+- The set of all eigenvalues of a matrix is called the _spectrum_.
+
 ## Exercises
 
 ### Problem 1
