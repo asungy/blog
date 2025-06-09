@@ -132,4 +132,17 @@ Therefore, it is Hermitian.
 
 #### Finding the eigenvectors
 
-> TODO: Finish
+For \(\lambda = 5\),
+
+\[
+  \begin{bmatrix}
+    6-\lambda & i \\
+    -i & 6-\lambda
+  \end{bmatrix} = \begin{bmatrix}
+    6-5 & i \\
+    -i & 6-5
+  \end{bmatrix} = \begin{bmatrix}
+    1 & i \\
+    -i & 1
+  \end{bmatrix}
+\]
