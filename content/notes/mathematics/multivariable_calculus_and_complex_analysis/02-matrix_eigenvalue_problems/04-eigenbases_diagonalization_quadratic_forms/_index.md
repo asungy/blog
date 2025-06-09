@@ -118,14 +118,14 @@ Then we get the following system of linear equations:
 
 \[\begin{aligned}
   x_1 + 2 x_3 = 0 \\
-  x_2 + x_3 = 0
+  x_2 - x_3 = 0
 \end{aligned}\]
 
 The following eigenvector satisifies this system:
 
 \[
   \begin{bmatrix}
-  2 \\ 1 \\ -1
+  -2 \\ 1 \\ 1
   \end{bmatrix}
 \]
 
@@ -178,8 +178,79 @@ Eigenvector:
     3 & 1 & 6-10 \\
   \end{bmatrix} =
   \begin{bmatrix}
-
+    -6 & 3 & 3 \\
+    3 & -4 & 1 \\
+    3 & 1 & -4 \\
   \end{bmatrix}
 \]
 
-> TODO: Continue
+Row reduce:
+
+\[\begin{bmatrix}
+  1 & 0 & -1 \\
+  0 & 1 & -1 \\
+  0 & 0 & 0
+\end{bmatrix}\]
+
+System of linear equations:
+
+\[\begin{aligned}
+  x_1 - x_3 = 0 \\
+  x_2 - x_3 = 0
+\end{aligned}\]
+
+Eigenvector:
+
+\[\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}\]
+
+#### Finding \(\mathbf{X}\) and \(\mathbf{X}^{-1}\)
+
+Eigenvectors from \(\lambda = \{1,5,10\}\):
+
+\[
+  \begin{bmatrix}
+  -2 \\ 1 \\ 1
+  \end{bmatrix}, \quad
+  \begin{bmatrix}
+    0 \\ 1 \\ -1
+  \end{bmatrix}, \quad
+  \begin{bmatrix}
+    1 \\ 1 \\ 1
+  \end{bmatrix}
+\]
+
+So,
+
+\[
+  \mathbf{X} = \begin{bmatrix}
+    -2 & 0 & 1 \\
+    1 & 1 & 1 \\
+    1 & -1 & 1
+  \end{bmatrix}
+\]
+
+#### Finding \(\mathbf{D}\)
+
+\[\begin{aligned}
+  \mathbf{D} &= \mathbf{X}^{-1}\mathbf{A}\mathbf{X} \\
+  \mathbf{D} &= \frac{1}{6}\begin{bmatrix}
+    -2 & 1 & 1 \\
+    0 & 3 & -3 \\
+    2 & 2 & 2
+  \end{bmatrix}
+  \begin{bmatrix}
+    4 & 3 & 3 \\
+    3 & 6 & 1 \\
+    3 & 1 & 6 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    2 & 0 & 1 \\
+    1 & 1 & 1 \\
+    -1 & -1 & 1
+  \end{bmatrix}\\
+  \mathbf{D} &= \begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & 5 & 0 \\
+    0 & 0 & 10 \\
+  \end{bmatrix}
+\end{aligned}\]
