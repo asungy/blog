@@ -50,6 +50,10 @@ Modal text editor.
 
 - Select items and then hit `&`.
 
+### Repeat last motion (`f`, `t`, `m`, `[` or `]`)
+
+- `Alt-.`
+
 ## tr
 
 ### Converting text to lowercase
