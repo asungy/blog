@@ -103,7 +103,7 @@ The forces between the rods are at equilbrium so:
 From the diagram we get the following equation:
 
 \[\begin{aligned}
-  |\mathbf{u}|\begin{bmatrix}cos(180°) & sin(180°)\end{bmatrix} + |\mathbf{v}|\begin{bmatrix}cos(45°) & sin(45°)\end{bmatrix} + |\mathbf{p}|\begin{bmatrix}cos(270°) & sin(270°)\end{bmatrix} &= \mathbf{0} \\
+  |\mathbf{u}|\begin{bmatrix}\text{cos}(180°) & \text{sin}(180°)\end{bmatrix} + |\mathbf{v}|\begin{bmatrix}\text{cos}(45°) & \text{sin}(45°)\end{bmatrix} + |\mathbf{p}|\begin{bmatrix}\text{cos}(270°) & \text{sin}(270°)\end{bmatrix} &= \mathbf{0} \\
   |\mathbf{u}|\begin{bmatrix}-1 & 0\end{bmatrix} + |\mathbf{v}|\begin{bmatrix}\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{bmatrix} + 1000\begin{bmatrix}0 & -1\end{bmatrix} &= \mathbf{0} \\
   |\mathbf{u}|\begin{bmatrix}-1 & 0\end{bmatrix} + |\mathbf{v}|\begin{bmatrix}\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}\end{bmatrix} &= -1000\begin{bmatrix}0 & -1\end{bmatrix} \\
   \begin{bmatrix}-|\mathbf{u}| & 0\end{bmatrix} + \begin{bmatrix}\frac{|\mathbf{v}|\sqrt{2}}{2} & \frac{|\mathbf{v}|\sqrt{2}}{2} \end{bmatrix} &= -1000\begin{bmatrix}0 & -1\end{bmatrix} \\
