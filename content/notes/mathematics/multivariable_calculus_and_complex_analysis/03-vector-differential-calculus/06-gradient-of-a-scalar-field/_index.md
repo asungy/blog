@@ -56,6 +56,42 @@ Find \(\nabla f\).
 
 ### Problem 3
 
+Find \(\nabla f\).
+
+\[
+  f = (x^2 + y^2 + z^2)^{\frac{-1}{2}}
+\]
+
+{{<divider>}}
+
+We want to find:
+
+\[
+\nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right)
+\]
+
+Let \(u = x^2 + y^2 + z^2\), so that
+
+\[
+f = u^{\frac{-1}{2}} \quad \Rightarrow \quad \frac{df}{du} = -\frac{1}{2} u^{\frac{-3}{2}}
+\]
+
+Then, using the chain rule...
+
+\[\begin{aligned}
+  \frac{\partial f}{\partial x} &= \frac{df}{du} \cdot \frac{\partial u}{\partial x} = -\frac{1}{2} (x^2 + y^2 + z^2)^{\frac{-3}{2}} \cdot 2x = -x (x^2 + y^2 + z^2)^{\frac{-3}{2}}\\
+  \frac{\partial f}{\partial y} &= \frac{df}{du} \cdot \frac{\partial u}{\partial y} = -\frac{1}{2} (x^2 + y^2 + z^2)^{\frac{-3}{2}} \cdot 2y = -y (x^2 + y^2 + z^2)^{\frac{-3}{2}}\\
+  \frac{\partial f}{\partial z} &= \frac{df}{du} \cdot \frac{\partial u}{\partial z} = -\frac{1}{2} (x^2 + y^2 + z^2)^{\frac{-3}{2}} \cdot 2z = -z (x^2 + y^2 + z^2)^{\frac{-3}{2}}\\
+\end{aligned}\]
+
+So,
+
+\[
+  \nabla f = -\frac{1}{\sqrt{x^2 + y^2 + z^2}} \cdot \left(x,y,z\right)
+\]
+
+### Problem 4
+
 Prove \(\nabla(f^n) = nf^{n-1}\nabla f\).
 
 {{<divider>}}
@@ -90,7 +126,7 @@ Then we would just factor out \(n f^{n-1} \):
   \nabla(f^n) = \left( n f^{n-1} \frac{\partial f}{\partial x}, n f^{n-1} \frac{\partial f}{\partial y}, \dots \right) = n f^{n-1} \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \dots \right) = n f^{n-1} \nabla f
 \]
 
-### Problem 4
+### Problem 5
 
 Experiments show that in a temperature field, heat flows in a the direction of maximum decrease of temperature \(T\). Find this direction in general and at the given point \(P\).
 
@@ -138,7 +174,7 @@ So,
   -\nabla T(0,1,2) = (0,4,-1)
 \]
 
-### Problem 5
+### Problem 6
 
 The force in an electrostatic field given by \(f\) has the direction of the gradient. Find \(\nabla f\) and its value at \(P\).
 
@@ -166,3 +202,4 @@ So,
 \[
   \nabla f(8,6) = \left( \frac{4}{25},\ \frac{3}{25} \right)
 \]
+
