@@ -92,6 +92,54 @@ So,
 
 ### Problem 4
 
+Find \(\nabla f\).
+
+\[
+  f = \frac{x^2-y^2}{x^2+y^2}
+\]
+
+{{<divider>}}
+
+We want to find:
+
+\[
+\nabla f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}\right)
+\]
+
+Let,
+
+\[\begin{aligned}
+  u &= x^2 - y^2\\
+  v &= x^2 + y^2\\
+\end{aligned}\]
+
+So,
+
+\[
+  f = \frac{x^2-y^2}{x^2+y^2} = \frac{u}{v} \Longrightarrow \nabla f = \frac{(\nabla u)(v) - (u) (\nabla v)}{v^2}
+\]
+
+Note:
+
+\[\begin{aligned}
+  \nabla u &= [2x,\ -2y] \\
+  \nabla v &= [2x,\ 2y] \\
+\end{aligned}\]
+
+Now we need to evaluate:
+
+\[
+\nabla f = \frac{(x^2 + y^2)[2x,\ -2y] - (x^2 - y^2)[2x,\ 2y]}{(x^2 + y^2)^2}
+\]
+
+> Skipping computations
+
+\[
+\nabla f = \frac{1}{(x^2 + y^2)^2} [4xy^2,\ -4yx^2]
+\]
+
+### Problem 5
+
 Prove \(\nabla(f^n) = nf^{n-1}\nabla f\).
 
 {{<divider>}}
@@ -126,7 +174,7 @@ Then we would just factor out \(n f^{n-1} \):
   \nabla(f^n) = \left( n f^{n-1} \frac{\partial f}{\partial x}, n f^{n-1} \frac{\partial f}{\partial y}, \dots \right) = n f^{n-1} \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \dots \right) = n f^{n-1} \nabla f
 \]
 
-### Problem 5
+### Problem 6
 
 Experiments show that in a temperature field, heat flows in a the direction of maximum decrease of temperature \(T\). Find this direction in general and at the given point \(P\).
 
@@ -174,7 +222,7 @@ So,
   -\nabla T(0,1,2) = (0,4,-1)
 \]
 
-### Problem 6
+### Problem 7
 
 The force in an electrostatic field given by \(f\) has the direction of the gradient. Find \(\nabla f\) and its value at \(P\).
 
