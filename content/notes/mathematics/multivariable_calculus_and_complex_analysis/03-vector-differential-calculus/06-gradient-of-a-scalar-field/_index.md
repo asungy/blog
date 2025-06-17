@@ -227,7 +227,7 @@ So,
 The force in an electrostatic field given by \(f\) has the direction of the gradient. Find \(\nabla f\) and its value at \(P\).
 
 \[
-  f = ln(x^2 + y^2),\quad P: (8,6)
+  f = \ln(x^2 + y^2),\quad P: (8,6)
 \]
 
 {{<divider>}}
