@@ -1,6 +1,6 @@
 +++
 draft = false
-title = '02 - Inner Product (Dot Product)'
+title = '02 (TODO) - Inner Product (Dot Product)'
 readingTime = false
 ToC = true
 layout = 'single'
