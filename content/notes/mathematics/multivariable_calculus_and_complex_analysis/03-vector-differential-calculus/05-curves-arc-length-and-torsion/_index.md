@@ -6,3 +6,5 @@ ToC = true
 layout = 'single'
 math = true
 +++
+
+> 9.5 – 9, 13, 27, 31, 35, 47
