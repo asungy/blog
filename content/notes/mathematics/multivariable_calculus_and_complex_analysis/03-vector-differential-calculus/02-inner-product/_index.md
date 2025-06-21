@@ -7,8 +7,6 @@ layout = 'single'
 math = true
 +++
 
-> 9.2 – 7, 13, 21, 27, 33, 39   
-
 ## Exercises
 
 ### Problem 1
