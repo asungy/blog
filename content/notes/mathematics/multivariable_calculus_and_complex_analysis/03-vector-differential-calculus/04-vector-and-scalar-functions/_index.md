@@ -72,6 +72,25 @@ This is a family of **paraboloid surfaces** that open in the positive \(z\)-dire
 
 ### Problem 3
 
+Find the first partial derivatives of \(\mathbf{v}_1=\left[e^x\cos{y},\,e^x\sin{y}\right]\) \(\mathbf{v}_2 = \left[\cos{x}\cosh{y}, -\sin{x}\sinh{y}\right]\).
 
-Find the first partial derivatives of \(\mathbf{v}_1=\left[e^x\cos{y},\,e^x\sin{y}\right]\)
+{{<divider>}}
+
+\[
+\mathbf{v}_1 = \begin{bmatrix} e^x \cos y \\ e^x \sin y \end{bmatrix}
+\]
+
+We compute the partial derivatives with respect to \(x\) and \(y\):
+
+- \(\frac{\partial \mathbf{v}_1}{\partial x} = \begin{bmatrix} \frac{\partial}{\partial x}(e^x \cos y) \\ \frac{\partial}{\partial x}(e^x \sin y) \end{bmatrix} = \begin{bmatrix} e^x \cos y \\ e^x \sin y \end{bmatrix}\)
+
+- \(\frac{\partial \mathbf{v}_1}{\partial y} = \begin{bmatrix} \frac{\partial}{\partial y}(e^x \cos y) \\ \frac{\partial}{\partial y}(e^x \sin y) \end{bmatrix} = \begin{bmatrix} -e^x \sin y \\ e^x \cos y \end{bmatrix}\)
+
+\[
+\mathbf{v}_2 = \begin{bmatrix} \cos x \cosh y \\ -\sin x \sinh y \end{bmatrix}
+\]
+
+- \(\frac{\partial \mathbf{v}_2}{\partial x} = \begin{bmatrix} \frac{\partial}{\partial x}(\cos x \cosh y) \\ \frac{\partial}{\partial x}(-\sin x \sinh y) \end{bmatrix} = \begin{bmatrix} -\sin x \cosh y \\ -\cos x \sinh y \end{bmatrix}\)
+
+- \(\frac{\partial \mathbf{v}_2}{\partial y} = \begin{bmatrix} \frac{\partial}{\partial y}(\cos x \cosh y) \\ \frac{\partial}{\partial y}(-\sin x \sinh y) \end{bmatrix} = \begin{bmatrix} \cos x \sinh y \\ -\sin x \cosh y \end{bmatrix}\)
 
