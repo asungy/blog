@@ -225,4 +225,10 @@ Evaluate the line integral where
 
 {{<divider>}}
 
-> TODO
+\[
+  f = (4t)(3t^2)(12t) = 144t^4
+\]
+
+\[
+  \int_{-2}^{2} 144t^4 = \left[\frac{144}{5}t^5\right]_{-2}^{2} = \frac{144}{5} \left(2^5-(-2)^5\right) = \frac{144}{5}(64) = 1843.2
+\]
