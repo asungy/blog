@@ -46,6 +46,11 @@ I'm not claiming to completely understand what's going on here, but the gist I'm
 
 Anyway, I thought it was useful for me to try to grok what Green was actually proposing, especially since Green's Theorem didn't take its general form until after Green's death, which was done by Augustin Cauchy in 1846, albeit without proof. Green's Theorem was proved until 1851 by Bernhard Riemann.
 
+Before moving on, I think it's important to note that in his essay, he says:
+> It has been long known from experience, that whenever the electric fluid is in a state of equilibrium in any system whatever of perfectly conducting bodies, the whole of the electric fluid will be carried to the surface of those bodies, without the smallest portion of electricity remaining in their interior
+
+Here, it seems to suggest that the ideas between volume and surface were experimentally understood, but Green was able to put a little more mathematical formalism around the idea.
+
 Stokes theorem apparently takes two forms: 1) [a classical form](https://en.wikipedia.org/wiki/Stokes'_theorem#Theorem) and 2) [a general form](https://en.wikipedia.org/wiki/Generalized_Stokes_theorem). I couldn't find in what exact way George Stokes contributed to either of the forms, but apparently the classical form was originally communicated to Stokes from Lord Kelvin in 1850 ([here are the letters](https://books.google.com/books?id=YrjkOEdC83gC&pg=PA97#v=onepage&q&f=false) of that correspondence). According to an editor's footnote in the letter, Stokes's name appears on the theorem because he set the theorem as a question on the 1854 Smith's Prize exam. The general form wasn't published until 1861 by Hermann Hankel (the original publication can be found [here](https://babel.hathitrust.org/cgi/pt?id=mdp.39015035826760&seq=5#page/34/mode/1up) though it is in German).
 
 In Lord Kelvin's letter to Stokes, he provides the following:
@@ -54,12 +59,24 @@ In Lord Kelvin's letter to Stokes, he provides the following:
   \int\left(\alpha\,dx+\beta\,dy+\gamma\,dz\right) = \pm\int\int \left\{l\left(\frac{d\beta}{dz}-\frac{\gamma}{dy}\right)+m\left(\frac{d\gamma}{dx}-\frac{d\alpha}{dz}\right)+n\left(\frac{d\alpha}{dy}-\frac{d\beta}{dx}\right)\right\}dS
 \]
 
-(If you actually read the letter, it funny that this seemed to come up almost as an after thought.)
-
 From the letter, he suggests that \(l\), \(m\), and \(n\) are normals of infinitesimal elements on the surface \(S\).
 
 Let's compare this with the equation for Stokes's Theorem provided by our textbook:
 
 \[
-  
+  \int_{S}\int \left(\text{curl}\,\mathbf{F}\right)\cdot\mathbf{n}\,dA = \oint_{C}\mathbf{F}\cdot\mathbf{r'}(s)\,ds
 \]
+
+and the textbook expands the form to:
+
+\[
+  \int_{R}\int\left[\left(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z}\right)N_1 + \left(\frac{\partial F_1}{dz}-\frac{\partial F_3}{dx}\right)N_2 + \left(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\right)N_3\right]du\,dv = \oint_{\overline{C}}\left(F_1\,dx + F_2\,dy + F_3\,dz\right)
+\]
+
+Interestingly, to original form that was sent to George Stokes 175 years ago has still been maintained in our textbook as we read it today. If you actually read the letter, it funny that this seemed to come up almost as an after thought. I don't have the complete context of the letters sent back and forth between Lord Kelvin and Stokes, but Stokes seems to respond to Lord Kelvin addressing the original concern of his letter, leaving what we would understand to be the classical form of Stokes's Theorem largely undiscussed (at least in those letters). I wish there was a bit more information about Lord Kelvin's thinking process behind the idea.
+
+But regardless, we can see the similarities between Green's Theorem and Stokes's Theorem as they link the inner curls of an arbitrary body to the surface of that body. The central idea here is that if you imagine a bunch of infinitesimal swirling elements contained in a boundary, the inner swirls end up canceling each other out until you're left with just the swirls that are touching the outer surface of a body. The difference between Green's and Stokes's theorems is that Green's does this only in 2 dimensions (well, at least the form that was publish by Cauchy and Riemann) while Stokes (well, actually Lord Kelvin) does this for 3 dimensions. I'm curious to know if Lord Kelvin knew about Green's Theorem when he effectively extrapolated Green's ideas to 3 dimensions (in Green's essay, he was at least kind enough to acknowledge contributions from Laplace!).
+
+We saw how useful Green's Theorem is for making planimeters work from last week's discussion, which is a tool that allows you to measure the volume of a 2 dimensional body by tracing its outline. Stokes's Theorem seems to have more relevance in the physical world because we live in a 3 dimensional world. Imagine you want to get a better understanding of an ecosystem in a body of water, say the Great Coral Reef. If, for some reason, you wanted to measure how much water exists in that ecosystem, rather than waiting for global warming to dry up the waters so you can bring your rulers out, you can use Stokes's Theorem to measure its volume by developing a vector field of the water currents around the ecosystem. The more measurements you are able to make around the ecosystem, the more accurate your measurement of the volume will be (at least in theory). Again, the idea here is that the inner water currents will cancel each other out leaving a measureable water current vector field on the surface of the ecosystem's boundary which can be used to calculate its volume.
+
+I thought this was really fun to research and it definitely makes me wish me and my wife were romantic enough to write mathematical proofs to each other. The one thing that bugs me is that I wish I could find some evidence that Stokes actually contributed to the theorem named after him. To me, it just seems like the thing was named after him because he used Kelvin's idea as a question on a test. That would be a little disappointing (but kind of funny) if that's the only reason it was named after him. I guess something that I would love to hear from the class is for those who are interested in reading the original documents, what are your interpretations of the ideas behind them. I don't have the strongest proclivity to mathematics so I'm sure I got something wrong somewhere. I would love to hear other people's thoughts!
