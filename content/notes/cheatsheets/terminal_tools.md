@@ -73,3 +73,12 @@ Some times when I create a new pane using `<Alt-n>`, it uses a vertical split ra
 To do a horizontal split do: `<Ctrl-g>, p, <Alt-g>, d`.
 
 Note: This works as of [this configuration](https://github.com/asungy/loadout/blob/e06a468456e4c3079bd83b6f0805994bdf29e8f8/home/config/zellij/config.kdl).
+
+## Allow OSC52 support for Zellij and Helix (SSH clipboard support)
+- Ghostty already supports this out of the box.
+- For Zellij, make sure the "copy_command" option is not set in the configuration.
+- For Helix, do
+```toml
+[editor]
+clipboard-provider = "termcode"
+```
