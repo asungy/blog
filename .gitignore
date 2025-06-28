@@ -12,3 +12,6 @@ __pycache__/
 scratchpad.ipynb
 .ipynb_checkpoints/
 .virtual_documents/
+
+# Private notes
+private-notes.md
