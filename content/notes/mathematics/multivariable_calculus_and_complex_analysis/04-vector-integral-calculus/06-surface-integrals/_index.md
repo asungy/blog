@@ -64,9 +64,50 @@ Now that we have \(\mathbf{r}(u,v)\), we can now solve for \(\mathbf{N}=\mathbf{
 
 So
 
+\[\begin{aligned}
+  \mathbf{N} = \mathbf{r}_u \times \mathbf{r}_v &= \begin{vmatrix}
+    \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+    1 & 0 & -1 \\
+    0 & 1 & -1 \\
+  \end{vmatrix}\\
+  &= (0 \cdot -1 - 1 \cdot -1)\mathbf{i} + (0 \cdot -1 - 1 \cdot -1)\mathbf{j} + (1 \cdot 1 - 0 \cdot 0)\mathbf{k}\\
+  &= 1\cdot\mathbf{i} + 1\cdot\mathbf{j} + 1\cdot\mathbf{k}\\
+  &= \left[1,\,1,\,1\right]
+\end{aligned}\]
+
+The final piece we need to figure out before we can start integrating is \(\mathbf{F}(\mathbf{r}(u,v))\). Recall that \(\mathbf{F} = \left[x^2,\,0,\,3y^2\right]\) and \(\mathbf{r}(u,v) = \left[u,\,v,\,1-u-v\right]\), so 
+
 \[
-   \mathbf{N} = 
+  \mathbf{F}(\mathbf{r}(u,v)) = \left[u^2,\,0,\,3v^2\right]
 \]
+
+Thus,
+
+\[
+  \mathbf{F}(\mathbf{r}(u,v)) \cdot \mathbf{N}(u,v) = \left[u^2,\,0,\,3v^2\right] \cdot \left[1,\,1,\,1\right] = u^2 + 0 + 3v^2
+\]
+
+So now we can set up the integration like so
+
+\[\begin{aligned}
+  \int_{S}\int\mathbf{F}\cdot\mathbf{n}\:dA &= \int_{R}\int \mathbf{F}(\mathbf{r}(u,v)) \cdot \mathbf{N}(u,v)\,du\,dv\\
+  &= \int_{0}^{1}\int_{0}^{1-v}\left(u^2+3v^2\right)\:du\,dv\\
+  &= \int_{0}^{1} \left[\frac{1}{3}u^3 + 3v^2u\right]_{0}^{1-v}\:dv\\
+  &= \int_{0}^{1} \left[\frac{1}{3}\left(1-v\right)^3 + 3v^2\left(1-v\right)\right]-0\:dv\\
+\end{aligned}\]
+
+If you go through the expansion process for \((1-v)^3\), then you get \(1-3v+3v^2-v^3\).
+
+So continuing on
+
+\[\begin{aligned}
+  \int_{S}\int\mathbf{F}\cdot\mathbf{n}\:dA &= \int_{0}^{1} \left[\frac{1}{3}\left(1-3v+3v^2-v^3\right) + 3v^2 - 3v^3\right]\:dv\\
+  &= \int_{S}\left[\frac{1}{3}-v+v^2-\frac{1}{3}v^3+3v^2-3v^3\right]\:dv\\
+  &= \int_{S}\left[\frac{1}{3}-v+4v^2-\frac{10}{3}v^3\right]\:dv\\
+  &= \left[\frac{1}{3}v - \frac{1}{2}v^2+\frac{4}{3}v^3-\frac{10}{12}v^4\right]_{0}^{1}\\
+  &= \left[\frac{1}{3}-\frac{1}{2}+\frac{4}{3}-\frac{5}{6}\right]\\
+  &= \boxed{\frac{1}{3}}
+\end{aligned}\]
 
 ### Problem 2
 
