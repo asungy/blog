@@ -13,8 +13,3 @@ layout = 'single'
 - [Helix Macros](./cheatsheets/helix_macros.md)
 - [MathJax](./cheatsheets/mathjax.md)
 - [Terminal tools](./cheatsheets/terminal_tools.md)
-
-## Mathematics
-- [Definitions](./mathematics/definitions)
-- [Mathematics for Machine Learning (Deisenroth, Faisal, Ong)](./mathematics/mathematics_for_machine_learning)
-- [Multivariable Calculus and Complex Analysis](./mathematics/multivariable_calculus_and_complex_analysis)

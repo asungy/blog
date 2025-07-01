@@ -10,7 +10,7 @@ ToC = false
 math = true
 +++
 
-After going through the some of the exercises where we had to evaluate the Laplacian on a function, I was curious how we could take an image that comprised of pixels and produce an image that outlines an object. It turns out there's this thing called a [_Laplacian matrix_](https://en.wikipedia.org/wiki/Discrete_Laplace_operator) that is used on discrete values and approximates the values as if it were a continuous function. So instead of differentiating continuous functions, we could use a matrix to somehow approximate this differentiation. At this point of my findings, I'm even more curious how this could even be possible.
+After reading that the Laplacian operator is used in medical imaging to make the outlines in images more defined, I was curious what this actually looked like in practice. It turns out there's this thing called a [_Laplacian matrix_](https://en.wikipedia.org/wiki/Discrete_Laplace_operator) that is used on discrete values and approximates the values as if it were a continuous function. So instead of differentiating continuous functions, we could use a matrix to somehow approximate this differentiation. At this point of my findings, I'm even more curious how this could even be possible.
 
 Well, there's this idea of [finite differences](https://en.wikipedia.org/wiki/Finite_difference#Higher-order_differences) that is used to approximate derivatives. Recall that for a function \(f(x,y)\), the Laplacian is:
 
