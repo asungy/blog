@@ -4,6 +4,10 @@ title = 'Neural Networks: Zero to Hero'
 readingTime = false
 ToC = false
 layout = 'single'
+
+[build]
+list = 'never'
+render = 'never'
 +++
 
 These are my notes going through the [Neural Networks: Zero to Hero YouTube playlist by Andrej Karpathy](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ).
