@@ -10,3 +10,5 @@ layout = 'single'
 - [Helix Macros](./cheatsheets/helix_macros.md)
 - [MathJax](./cheatsheets/mathjax.md)
 - [Terminal tools](./cheatsheets/terminal_tools.md)
+
+> NOTE TO SELF: For the love of God, please write a sops guide for yourself....
